@@ -1,0 +1,36 @@
+div{
+    background-color: white;
+    margin: 110px auto;
+    width: 300px;
+    height: 375px;
+    padding: 0px 0px 150px 0px;
+    border-radius: 2%;
+    box-shadow:5px 5px 0.3em rgba(0, 0, 0, 0.329);
+}
+h2{
+    margin:20px 0px 20px 10px;
+}
+p{
+    margin: 20px 5px 20px 10px;
+}
+h3{
+    margin-left: 10px;
+    font-size: medium;
+}
+#moni{
+    margin-bottom: 30px;
+}
+a{
+    display: block;
+    background-color:#3c31b6;
+    color: white;
+    text-decoration: none;
+    margin: 10px auto;
+    height: 10px;
+width: 200px;
+text-align: center;
+border-radius: 5px;
+padding: 15px ;}
+img{
+    border-radius: 2% 2% 0 0;
+}

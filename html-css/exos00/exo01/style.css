@@ -1,0 +1,19 @@
+a{
+    display: block;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    margin: 400px auto;
+width: 100px;
+text-align: center;
+border-radius: 10px;
+padding: 20px ;
+
+}
+a:hover{
+    background-color: brown;
+    text-decoration: underline;
+    color:aqua;
+    font-weight: 1000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
