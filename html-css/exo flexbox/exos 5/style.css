@@ -1,0 +1,104 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #222;
+  padding-top: 140px;
+}
+
+.flex-container {
+  max-width: 600px;
+  margin: 0 auto 140px;
+  height: 400px;
+  background: wheat;
+  padding: 10px;
+  border-radius: 5px;
+  gap: 10px;
+  display: flex;
+}
+.flex-item {
+  width: 100px;
+  height: 100px;
+  background: crimson;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 35px;
+  color: #f1f1f1;
+  font-weight: bold;
+}
+
+/* Exercice 1 */
+
+/* justify-content: space-around;
+align-items: center; */
+/* #fl2{
+  display: flex;
+  align-self: center;
+}
+#fl3{
+  display: flex;
+  align-self: flex-end;
+} */
+
+
+/* Exercice 2 */
+/* justify-content: space-between; */
+
+
+
+/* Exercice 3 */
+/* .flex-3{
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.item-2{
+  height: 150px;
+}
+.item-3{
+  height: 200px;
+}
+.item-4{
+  height: 115px;
+}
+.item-5{
+  height: 160px;
+} */
+
+
+
+
+/* Exercice 4 */
+/* Vous pouvez mettre des valeurs arbitraires afin que ça ressemble à l'exemple donné. */
+/* .flex-4{
+  justify-content: space-between;
+}
+.item-2{
+  flex-basis: 80%;
+} */
+
+
+
+/* Exercice 5 */
+/* .flex-5{
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.item-2{
+height: 200px;
+} */
+
+
+
+/* Exercice 6 */
+/* .flex-6{
+  flex-direction: row-reverse;
+  align-items: flex-end;
+} */
+

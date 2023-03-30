@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    height: 1100px;
+    margin: 100px;
+}
+.orange{
+    height: 30vh;
+    border: 5px solid orange;
+}
+.bleus{
+    display: flex;
+    padding-top: 30px;
+}
+.bleuc{
+    display: flex;
+    flex: 1;
+    height: 60vh;
+    margin-right: 40px;
+    flex-direction: column;
+    row-gap: 5vh;
+}
+.bleuc1{
+    display: flex;
+    height: 60vh;
+    flex: 1;
+    border: 5px solid lightblue;
+
+}
+.bleuf{
+    display: flex;
+    flex: 3;
+    height: 50vh;
+    flex-direction: column;
+    row-gap: 5vh;
+    
+}
+.bleuf1{
+    display: flex;
+    height: 50vh;
+    flex: 1;
+    border: 5px solid darkblue;
+}
+.vert{
+    height: 30vh;
+    border: 5px solid green;
+    margin-top: 30px;
+}

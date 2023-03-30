@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    height: 800px;
+    margin: 150px;
+}
+.orange{
+    height: 30vh;
+    background-color: orangered;
+}
+.grisJaune{
+    display: flex;
+    padding-top: 30px;
+}
+.gris{
+    display: flex;
+    flex: 1;
+    height: 80vh;
+    background-color: grey;
+    margin-right: 15px;
+}
+.bleus{
+    display: flex;
+    flex: 3;
+    height: 80vh;
+    flex-direction: column;
+    row-gap: 10vh;
+}
+.jaune{
+    display: flex;
+    background-color: yellow;
+    height: 20vh;
+    flex: 3;
+}
+.bleu{
+    display: flex;
+    background-color: blue;
+    height: 20vh;
+    flex: 3;
+}
+.vertc{
+    display: flex;
+    background-color:greenyellow;
+    height: 20vh;
+    flex: 3;
+}
+.vert{
+    margin-top: 30px;
+    height: 30vh;
+    background-color: green;
+}
