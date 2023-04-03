@@ -4,7 +4,7 @@
   padding: 0;
 }
 .container {
-  height: 800px;
+  height: 2000px;
   width: 100%;
 }
 header {
@@ -182,6 +182,7 @@ aside div .piscine {
   display: flex;
   flex-direction: column;
   padding-left: 20px;
+  height: 200px;
 }
 aside div .wifi {
   background: #FFFFFF;
@@ -190,6 +191,7 @@ aside div .wifi {
   display: flex;
   flex-direction: column;
   padding-left: 20px;
+  height: 200px;
 }
 aside div .resto {
   background: #FFFFFF;
@@ -198,6 +200,7 @@ aside div .resto {
   display: flex;
   flex-direction: column;
   padding-left: 20px;
+  height: 200px;
 }
 .herb {
   display: flex;
@@ -257,12 +260,12 @@ footer .div1 p {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
+  padding-bottom: 100px;
   color: #2D6187;
 }
 footer .div4 {
   display: flex;
   column-gap: 20px;
-  padding-top: 100px;
 }
 footer .div4 .haut {
   display: flex;
@@ -307,18 +310,4 @@ footer .div3 {
   height: 200px;
   background-color: #A8DDA8;
   border-radius: 0px 0px 0px 24px;
-}
-footer .ed {
-  position: absolute;
-  width: 136px;
-  height: 136px;
-  top: 2500px;
-  left: 400px;
-}
-footer .mik {
-  position: absolute;
-  width: 136px;
-  height: 136px;
-  top: 2500px;
-  left: 900px;
 }
