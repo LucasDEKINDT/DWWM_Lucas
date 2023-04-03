@@ -13,7 +13,7 @@ header {
   flex-direction: column;
   align-items: center;
   background: url(image/header.jpg);
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 header .tete {
@@ -30,6 +30,7 @@ header .tete img {
 }
 header .tete .liens {
   display: flex;
+  width: 100vh;
   flex-direction: row;
   align-self: flex-start;
   padding-right: 300px;
@@ -328,4 +329,80 @@ footer .div3 {
   height: 200px;
   background-color: #A8DDA8;
   border-radius: 0px 0px 0px 24px;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 768px;
+  }
+  header .tete {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  header .tete .liens {
+    display: flex;
+    justify-content: flex-start;
+  }
+  header .tete img {
+    display: flex;
+    align-self: flex-start;
+  }
+  article {
+    height: 500px;
+  }
+  article img {
+    width: 225px;
+  }
+  article .ul1 {
+    justify-content: center;
+    column-gap: 110px;
+  }
+  article .ul2 {
+    justify-content: center;
+    column-gap: 110px;
+  }
+  footer .div2 {
+    width: 300px;
+    height: 250px;
+  }
+  footer .div3 {
+    width: 300px;
+    height: 250px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .container {
+    width: 320px;
+  }
+  header {
+    width: 320px;
+  }
+  header .tete .liens {
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+  header .tete2 {
+    padding-top: 50px;
+  }
+  header .tete2 p {
+    width: 200px;
+  }
+  .sec .mont {
+    display: none;
+  }
+  article {
+    height: 1000px;
+  }
+  article .ul3 {
+    display: flex;
+    width: 300px;
+  }
+  article .ul1 {
+    flex-direction: column;
+    align-items: center;
+  }
+  article .ul2 {
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+  }
 }
