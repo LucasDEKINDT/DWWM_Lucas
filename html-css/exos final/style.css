@@ -378,10 +378,10 @@ footer .div3 {
   }
   header .tete .liens {
     flex-direction: column;
-    padding-bottom: 20px;
+    row-gap: 10px;
   }
   header .tete2 {
-    padding-top: 50px;
+    padding-top: 120px;
   }
   header .tete2 p {
     width: 200px;
@@ -390,7 +390,14 @@ footer .div3 {
     display: none;
   }
   article {
-    height: 1000px;
+    height: 1200px;
+  }
+  article p {
+    display: flex;
+    align-self: center;
+    text-align: end;
+    height: 200px;
+    width: 200px;
   }
   article .ul3 {
     display: flex;
@@ -399,10 +406,70 @@ footer .div3 {
   article .ul1 {
     flex-direction: column;
     align-items: center;
+    row-gap: 30px;
   }
   article .ul2 {
     flex-direction: column;
     align-items: center;
     padding: 50px;
+    row-gap: 30px;
+  }
+  aside {
+    padding-top: 30px;
+    height: 900px;
+    width: 170px;
+  }
+  aside .service {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 1000px;
+    text-align: start;
+    row-gap: 40px;
+  }
+  aside .service p {
+    display: flex;
+    align-self: flex-start;
+    text-align: start;
+    height: 200px;
+    width: 200px;
+  }
+  aside .service .piscine {
+    width: 250px;
+    height: 230px;
+    row-gap: 10px;
+  }
+  aside .service .wifi {
+    width: 250px;
+    height: 230px;
+    row-gap: 10px;
+  }
+  aside .service .resto {
+    width: 250px;
+    height: 230px;
+    row-gap: 10px;
+  }
+  .herb {
+    height: 300px;
+  }
+  .herb .h22 {
+    font-size: 40px;
+  }
+  footer {
+    padding-top: 60px;
+    height: 900px;
+  }
+  footer .p1 {
+    display: flex;
+    align-self: center;
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    padding-left: 100px;
+  }
+  footer .div4 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
   }
 }

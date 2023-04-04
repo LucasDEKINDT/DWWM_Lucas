@@ -469,11 +469,11 @@ footer {
         .tete{
             .liens{
                 flex-direction: column;
-                padding-bottom: 20px;
+                row-gap: 10px;
             }
         }
         .tete2{
-            padding-top: 50px;
+            padding-top: 120px;
             p{
                 width: 200px;
             }
@@ -485,7 +485,13 @@ footer {
         }
     }
     article{
-        height: 1000px;
+        height: 1200px;
+        p{display: flex;
+            align-self: center;
+            text-align: end;
+            height: 200px;
+            width: 200px;
+        }
         .ul3{
             display: flex;
             width: 300px;
@@ -493,11 +499,77 @@ footer {
         .ul1{
             flex-direction: column;
             align-items: center;
+            row-gap: 30px;
         }
         .ul2{
             flex-direction: column;
             align-items: center;
             padding: 50px;
+            row-gap: 30px;
         }
+    }
+    aside{
+        padding-top: 30px;
+        height: 900px;
+        width: 170px;
+        .service{
+            display: flex;
+            flex-direction: column;
+            width: 150px;
+            height: 1000px;
+            text-align: start;
+            row-gap: 40px;
+            p{
+                display: flex;
+            align-self: flex-start;
+            text-align: start;
+            height: 200px;
+            width: 200px;
+
+            }
+            .piscine{
+                width: 250px;
+                height: 230px;
+                row-gap: 10px;
+            }
+            .wifi{
+                width: 250px;
+                height: 230px;
+                row-gap: 10px;
+            }
+            .resto{
+                width: 250px;
+                height: 230px;
+                row-gap: 10px;
+            }
+
+
+        }
+    }
+    .herb{
+        height: 300px;
+        .h22{
+            font-size: 40px;
+        }
+    }
+    footer{
+        padding-top: 60px;
+        height: 900px;
+        .p1{
+            display: flex;
+            align-self: center;
+            text-align: center;
+            height: 200px;
+            width: 200px;
+            padding-left: 100px;
+
+        }
+        .div4{
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+
+        }
+
     }
 }
