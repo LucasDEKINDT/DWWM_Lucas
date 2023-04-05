@@ -1,0 +1,323 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 1600px;
+  height: 100%;
+  margin: 0 auto;
+}
+header {
+  height: 736px;
+  display: flex;
+  flex-direction: column;
+}
+header .tete {
+  width: 1600px;
+  height: 89px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 50px;
+}
+header .tete .logo {
+  display: flex;
+  column-gap: 15px;
+  justify-content: space-around;
+  align-items: center;
+  width: 220px;
+  height: 40px;
+}
+header .tete .logo img {
+  background-color: #421E09;
+}
+header nav {
+  width: 1600px;
+  height: 59px;
+  background-color: #F1720B;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 360px;
+  padding-right: 375px;
+}
+header nav div {
+  display: flex;
+  justify-content: center;
+  height: 59px;
+  width: 100px;
+}
+header nav div:hover {
+  background-color: #421E09;
+  border-bottom: 5px solid white;
+}
+header nav a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  height: 59px;
+}
+header .big {
+  width: 1600px;
+  height: 575px;
+  background: url(image/header.jpg);
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  column-gap: 20px;
+  padding-bottom: 35px;
+}
+header .big .big1 {
+  height: 250px;
+  width: 470px;
+  background: url(image/barefoot.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+header .big .big1 h2 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 54px;
+  color: #FFFFFF;
+}
+header .big .big1 p {
+  margin-bottom: 50px;
+  width: 220px;
+  height: 50px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 25px;
+  /* or 147% */
+  color: #FFFFFF;
+}
+header .big .big1 button {
+  width: 165px;
+  height: 40px;
+  background-color: #F1720B;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+header .big .big1 button a {
+  color: white;
+  text-decoration: none;
+}
+header .big .big2 {
+  height: 250px;
+  width: 470px;
+  background: url(image/sky.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+header .big .big2 h2 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 54px;
+  color: #FFFFFF;
+}
+header .big .big2 p {
+  margin-bottom: 50px;
+  width: 350px;
+  height: 50px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 25px;
+  /* or 147% */
+  color: #FFFFFF;
+}
+header .big .big2 button {
+  width: 165px;
+  height: 40px;
+  background-color: #F1720B;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+header .big .big2 button a {
+  color: white;
+  text-decoration: none;
+}
+.part1 {
+  width: 1600px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.part1 div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 853px;
+  height: 323px;
+}
+.part1 div h2 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 39px;
+  line-height: 25px;
+  /* or 64% */
+  color: #F1720B;
+  margin-bottom: 20px;
+}
+.part1 div .p1 {
+  text-align: center;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 24px;
+  /* or 126% */
+  color: #7D7D7D;
+  width: 500px;
+  height: 60px;
+}
+.part1 div .p2 {
+  text-align: center;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 24px;
+  /* or 126% */
+  color: #7D7D7D;
+}
+.part1 div button {
+  height: 57px;
+  width: 300px;
+  background-color: #421E09;
+  margin-top: 20px;
+}
+.part1 div button a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+}
+.part2 {
+  width: 1600px;
+  height: 550px;
+  background: url(image/equipement.jpg);
+  display: flex;
+  align-items: center;
+  padding-left: 350px;
+}
+.part2 div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 680px;
+  height: 400px;
+}
+.part2 div h2 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 24px;
+  /* or 55% */
+  color: #FFFFFF;
+}
+.part2 div h1 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 126px;
+  line-height: 135px;
+  /* or 107% */
+  color: #F1720B;
+}
+.part2 div button {
+  width: 300px;
+  height: 57px;
+  background-color: #421E09;
+  border: none;
+}
+.part2 div button a {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 0px;
+  /* or 0% */
+  color: #FFFFFF;
+  text-decoration: none;
+}
+article {
+  width: 1600px;
+  height: 677px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+article .div1 {
+  height: 300px;
+  width: 790px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+article .div1 h2 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 16px;
+  /* or 42% */
+  color: #F1720B;
+  margin-top: 30px;
+}
+article .div1 p {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 16px;
+  /* or 84% */
+  color: #7D7D7D;
+  margin-top: 20px;
+}
+article .div2 {
+  width: 1051px;
+  height: 326px;
+  display: flex;
+}

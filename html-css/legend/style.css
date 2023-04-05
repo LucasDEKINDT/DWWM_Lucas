@@ -35,7 +35,6 @@ section {
   background-color: #3E3838;
 }
 section #pintro {
-  display: flex;
   height: 195px;
   width: 741px;
   font-family: 'Inter';
@@ -46,7 +45,7 @@ section #pintro {
   letter-spacing: -0.01em;
   color: #D4CC77;
 }
-section #intro {
+section h2 {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
