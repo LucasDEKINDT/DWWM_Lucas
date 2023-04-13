@@ -5,6 +5,6 @@
 video {
   object-fit: cover;
 }
-.parallax-section {
-  background: url('ressources/parallax.jpg') no-repeat bottom / cover fixed; min-height: 250px;
+.parallax- {
+  background: url('./images/parallax.jpg') no-repeat bottom / cover fixed; min-height: 250px;
 }
