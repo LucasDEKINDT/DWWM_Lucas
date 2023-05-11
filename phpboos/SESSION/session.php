@@ -1,5 +1,6 @@
 <?php ob_start() ?>
 <?php session_start() ?>
+<h1 class="text-center">Session  <img src="./image/session.png" alt="romain" height="50px"></h1>
 <div class="d-flex ">
 <a href="home.php"type="button" class="btn btn-secondary h-50 ms-5 me-3 px-5">Home </a>
 <div class="d-flex justify-content-center">

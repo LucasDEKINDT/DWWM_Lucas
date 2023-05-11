@@ -1,5 +1,5 @@
 <?php ob_start() ?>
-<?php require "function.php";   ?>
+<h1 class="text-center">Calculatrice <img src="./image/calculatrice.png" alt="romain" height="50px"></h1>
 <div class="d-flex justify-content-center">
     <div class="bg-dark text-light w-50 d-flex justify-content-center p-5">
     <form class="container mt-5 perso" action="calcul.php" method="POST">
