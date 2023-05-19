@@ -1,0 +1,184 @@
+***********************
+1°)SELECT /FROM /AS
+**********************
+1) select * from personnage;
+
+2) select * from arme;
+
+3)select nom , levelMin from arme;
+
+4)select surnom , level from personnage; 
+
+5)SELECT nom AS pseudo , level AS niveau FROM personnage;
+
+6)SELECT libelle AS Types_armes_du_jeu FROM typearme;
+
+************************************************
+2°) les calculs ,fonction COUNT/SUM/AVG/MIN/MAX
+************************************************
+
+1)SELECT COUNT(*) AS Nombre_d_armes FROM arme;
+
+2)SELECT COUNT(*) AS Nombre_de_personnage FROM personnage;
+
+3)SELECT AVG(level) AS Moyenne_de_niveau  FROM personnage;
+
+4)SELECT SUM(baseForce) AS Points_de_force , SUM(baseAgi) AS Points_d_agilite , SUM(baseIntel) AS Points_d_intel_du_jeu   FROM classe;
+
+5)SELECT MIN(levelMin),MAX(levelMin) FROM arme ;
+
+6)SELECT nom , SUM(baseForce+ baseAgi+ baseIntel) AS NB_points_de_caracteristique FROM classe GROUP BY nom  ;
+
+****************************************************************************
+3°) Les fonctions sur les chaines de caractères : CONCAT / SUBSTRING / LEFT
+****************************************************************************
+
+1)SELECT CONCAT(nom , surnom) AS Personnage FROM personnage;
+
+2)SELECT CONCAT(nom , ' -F: ',baseForce ,' -A: ', baseAgi ,' -I: ', baseIntel ) AS Classe FROM classe;
+
+3)SELECT SUBSTRING(nom,1,6) FROM personnage;
+
+4)SELECT CONCAT(LEFT(nom,5),'-',LEFT(description,20) ) AS Classe FROM classe;
+
+**************************************************************************
+4°) Filtrer les données avec le mot clef WHERE
+**************************************************************************
+
+1)SELECT * FROM arme WHERE levelMin >=5 ;
+
+2)SELECT * FROM arme WHERE degat <=25 ;
+
+3)SELECT nom ,surnom FROM personnage WHERE level = 10;
+
+4)SELECT * FROM typearme WHERE estDistance = 1;
+
+***************************************************************
+5°) Les opérateurs AND / OR / BETWEEN
+***************************************************************
+
+1)SELECT * from arme WHERE levelMin BETWEEN '4' AND '8';
+
+2)SELECT * from personnage WHERE idPersonnage <=3 AND level =10;
+
+3)SELECT * from arme WHERE levelMin < '4' OR levelMin >='8';
+
+4)SELECT * FROM arme WHERE (idArme = 1 OR idArme = 2) OR (degat >= '30');
+
+5)SELECT * FROM arme WHERE (idArme = 1 OR idArme = 2) OR (degat BETWEEN '25' AND '40');
+
+6)SELECT * FROM personnage WHERE (level <>8) AND (level > 7 OR level < 6 );
+
+7)SELECT COUNT(level) AS' NB Perso<10' FROM personnage WHERE level <> 10;
+
+8)SELECT AVG(degat) FROM arme WHERE levelMin >= '3' AND levelMin <= '7';
+
+********************************************************
+6°) LIKE / IN LIMIT / OFFSET / IS NULL
+********************************************************
+
+1)SELECT * FROM personnage WHERE nom LIKE 'l%';
+
+2)SELECT * FROM personnage WHERE nom LIKE 'l%' AND nom LIKE'%er' ;
+
+3)SELECT * FROM arme WHERE nom LIKE '%bois%' ;
+
+4)SELECT * FROM arme WHERE nom LIKE 'a_b%';
+
+5)SELECT * FROM arme WHERE idArme IN('1','2','4','5','7');
+
+6)SELECT * FROM personnage WHERE idPersonnage IN('2','3','4','6') AND level = '10' ;
+
+7)SELECT * FROM personnage WHERE surnom IS NOT NULL ;
+
+8)SELECT * FROM personnage WHERE surnom IS NULL ;
+
+9)SELECT * FROM personnage WHERE idClasse = 1 ;
+
+10)SELECT * FROM personnage WHERE idPersonnage = '4' OR idPersonnage = '5' ;
+
+*******************************************************************************************************
+LES JOINTURES
+*******************************************************************************************************
+
+***************************************************
+1°) Les jointures internes
+***************************************************
+1)SELECT * FROM personnage INNER JOIN  classe ON personnage.idClasse = classe.idClasse;
+
+2) SELECT nom , levelMin , libelle , estDistance FROM arme INNER JOIN typearme ON arme.idArme = typearme.idTypeArme;
+
+******************************************
+2°) Les jointures et surnoms de tables
+******************************************
+
+1)SELECT personnage.nom ,classe.nom  FROM personnage INNER JOIN classe ON personnage.idClasse = classe.idclasse;
+
+2)SELECT personnage.nom ,arme.nom ,levelMin , degat  FROM personnage INNER JOIN arme ON personnage.idClasse = arme.idArme;
+
+3)SELECT personnage.nom ,arme.nom ,levelMin , degat,libelle ,estDistance  FROM personnage INNER JOIN arme ON personnage.idClasse = arme.idArme JOIN typearme ON personnage.idClasse = typearme.idTypeArme  ;
+
+*****************************************************
+3°) Jointures er filtres
+*****************************************************
+
+1)SELECT personnage.nom ,level ,arme.nom ,levelMin  FROM personnage INNER JOIN arme ON personnage.idClasse = arme.idTypeArme;
+
+2)SELECT arme.nom ,levelMin,degat,libelle   FROM arme INNER JOIN typearme ON arme.idTypeArme = typearme.idTypeArme WHERE estDistance ='0' ;
+
+3)mysql> SELECT personnage.nom,arme.nom,libelle   FROM personnage INNER JOIN arme ON personnage.idArmeUtilise = arme.idArme JOIN typearme ON arme.idTypeArme = typearme.idTypeArme JOIN classe ON personnage.idClasse = classe.idClasse WHERE classe.idClasse = 1 ;
+
+*******************************************
+4°) Jointures, calculs et tris
+*******************************************
+1)SELECT idPersonnage , personnage.nom , arme.nom , libelle FROM personnage INNER JOIN arme ON personnage.idClasse = arme.idTypeArme  JOIN typearme ON arme.idTypeArme = typearme.idTypeArme WHERE personnage.level = 10;
+
+2)SELECT idPersonnage , personnage.nom , arme.nom , libelle FROM personnage INNER JOIN arme ON personnage.idClasse = arme.idTypeArme  JOIN typearme ON arme.idTypeArme = typearme.idTypeArme WHERE personnage.level = 10 ORDER BY idPersonnage ;
+
+3)SELECT AVG(degat) AS 'Moyenne de dégat des armes à distance'  FROM arme INNER JOIN typearme ON arme.idTypeArme = typearme.idTypeArme WHERE estDistance = 1;
+
+4)SELECT personnage.nom   FROM personnage INNER JOIN arme ON personnage.idArmeUtilise = arme.idArme JOIN typearme ON arme.idTypeArme = typearme.idTypeArme WHERE libelle LIKE 'a%' ;
+
+***********************************************
+5°) Les jointures externes
+***********************************************
+
+1)SELECT libelle , arme.nom FROM typearme INNER JOIN arme ON typearme.idTypeArme = arme.idTypeArme ;
+
+2)SELECT libelle , arme.nom FROM arme RIGHT JOIN typearme ON arme.idTypeArme = typearme.idTypeArme ;
+
+3)SELECT * FROM personnage RIGHT JOIN arme ON arme.idArme = personnage.idArmeUtilise ORDER BY arme.levelMin;
+
+4)SELECT arme.idArme, arme.nom , personnage.nom FROM dispose RIGHT JOIN arme ON arme.idArme = dispose.idArme RIGHT JOIN personnage ON personnage.idPersonnage = dispose.idPersonnage ORDER BY arme.idArme;
+
+***********************************************
+LES GROUPEMENT 
+***********************************************
+
+*****************************
+1°) Regroupement et GROUP BY
+*****************************
+
+1)SELECT libelle AS "Type d'arme" , COUNT(arme.nom) FROM arme INNER JOIN typearme ON arme.idTypeArme = typearme.idTypeArme GROUP BY arme.idTypeArme ;
+
+2)SELECT classe.nom , description , COUNT(personnage.nom) FROM classe INNER JOIN personnage ON classe.idClasse = personnage.idClasse GROUP BY personnage.idClasse ;
+
+3)SELECT personnage.nom, COUNT(*) FROM personnage RIGHT JOIN dispose ON personnage.idPersonnage = dispose.idPersonnage GROUP BY personnage.idPersonnage;
+
+4)SELECT personnage.nom, COUNT(*) FROM personnage RIGHT JOIN dispose ON personnage.idPersonnage = dispose.idPersonnage JOIN classe ON personnage.idClasse = classe.idClasse WHERE classe.nom = 'Guerrier' GROUP BY personnage.idPersonnage;
+
+5)SELECT arme.nom, COUNT(*) AS `Nb de joueurs` FROM arme right JOIN dispose ON arme.idArme = dispose.idArme GROUP BY arme.idArme;
+
+6)SELECT classe.nom AS `Classe`, AVG(personnage.level) as `Niveau moyen` FROM classe RIGHT JOIN personnage ON classe.idClasse = personnage.idClasse GROUP BY classe.idClasse;
+
+*****************************************************************************************************************
+2°) Regroupement et HAVING : « Having » permet de filtrer sur les fonctions de calcul (AVG / COUNT/SUM/MIN/MAX)
+*****************************************************************************************************************
+
+1)SELECT classe.nom AS `Classe`, AVG(personnage.level) AS `Niveau moyen` FROM classe RIGHT JOIN personnage ON classe.idClasse = personnage.idClasse GROUP BY classe.idClasse HAVING AVG(personnage.level) > 8;
+
+2)SELECT arme.nom, COUNT(*) AS `Nb de joueurs` FROM arme RIGHT JOIN dispose ON arme.idArme = dispose.idArme GROUP BY arme.idArme HAVING COUNT(*)<3;
+
+3)SELECT typearme.libelle AS `Type d'arme`, COUNT(idArme) AS `Nb d'armes` FROM arme RIGHT JOIN typearme ON typearme.idTypeArme = arme.idTypeArme WHERE estDistance = 0 GROUP BY typearme.idTypeArme HAVING COUNT(idArme)<2;
+
+
