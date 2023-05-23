@@ -36,7 +36,11 @@ $this->nom=$nom;
 $this->prénom=$prénom;
 $this->adresse=$adresse;
 }
-
+public function setAdresse($adresse)
+{
+$this->adresse=$adresse;
+}
+public function getAdresse(){return $this->adresse;}
 public function __destruct()
 {
 echo  $this->prénom . $this->nom.' est supprimée de vos contacts';
@@ -48,8 +52,6 @@ $texte=" $this->prénom $this->nom <br /> $this->adresse <br />";
 return $texte;
 }
 //
-public function setadresse($adresse)
-{
-$this->adresse=$adresse;
-}
+
+
 }

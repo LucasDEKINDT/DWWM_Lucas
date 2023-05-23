@@ -9,13 +9,23 @@ $ville4 = new Ville("Lyon",69);
 $ville1->affichage();
 $ville2->affichage();
 $ville3->affichage();
-$ville3->affichage();
+$ville4->affichage();
 
 
 
 $personne = new personne("DEKINDT","Lucas"," 40ruejesaispasquoi");
+
+if(isset($_POST['adresse'])){
+    $personne->setAdresse($_POST['adresse']);
+}
 echo $personne->getpersonne();
 
-$personne->setadresse("50ruejesaisquoi");
 
+echo "<form method='POST'>
+        <label for='adresse'>Adresse :</label>
+        <input type='text' name='adresse' value='" . $personne->getAdresse() ."'><br>
+        <button type='submit'>Modifier l'adresse</button>
+
+        </form>";
 unset($personne);
+

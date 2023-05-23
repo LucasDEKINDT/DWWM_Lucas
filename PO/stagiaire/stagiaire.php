@@ -1,46 +1,38 @@
 <?php
+class Stagiaire {
+    private $nom;
+    private $notes = array();
 
-class Stagiaire{
-
-    private $nom ;
-    private $notes=[];
-
-    public function setNom($nom){
+    public function __construct(string $nom) {
         $this->nom = $nom;
     }
-    public function setNotes($notes){
-        $this->notes = $notes;
-    }
-    public function getNom(){return $this->nom;}
-    public function getNotes(){return $this->notes;}
 
-    public function __construct($nom,$notes){
-        $this->nom = $nom;
-        $this->notes = $notes;
+    public function getNom(): string {
+        return $this->nom;
     }
 
-public function calculerMoyenne(){
-   $total=0;
-   foreach($this->notes as $notes){
-    $total += $notes;
-   }
+    public function ajouterNote(float $note) {
+        echo $this->notes[] = $note;
+    }
 
-   return round($total /count($this->notes));
-    
-}
-public function trouverMax(){
-    return max($this->notes);
-}
-public function trouverMin(){
-    return min($this->notes);
-}
-public function affichage(){
-    echo "Moyenne :". $this->calculerMoyenne();
-    echo "<br>";
-    echo "Max :". $this->trouverMax();
-    echo "<br>";
-    echo "Min :". $this->trouverMin();
+    public function calculerMoyenne(): float {
+        $total = 0;
+        $count = count($this->notes);
 
+        if ($count > 0) {
+            foreach ($this->notes as $note) {
+                $total += $note;
+            }
+
+            return $total / $count;
+        }
+
+        return 0;
+    }
+
+    public function getNoteMin(): float {
+        return min($this->notes);
+    }
 }
 
-}
+?>
