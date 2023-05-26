@@ -16,11 +16,22 @@ class Employe {
     }
 
     public function toString() {
-        return "<br>Nom : " . $this->nom . "<br>Prénom : " . $this->prenom . "<br>Numéro de Sécurité Sociale : " . $this->numSecu . "<br>Salaire : " . $this->salaire . "<br>Job : " . $this->job;
+        echo"<br>Nom : " . $this->nom . "<br>Prénom : " . $this->prenom . "<br>Numéro de Sécurité Sociale : " . $this->numSecu . "<br>Salaire : " . $this->salaire . "<br>Job : " . $this->job;
     }
 
     public function effectueSonJob() {
-        echo $this->prenom . " " . $this->nom . " effectue son travail de " . $this->job . ".<br>";
+        echo "<br>";
+        switch($this->job){
+            case "soudeur":
+                echo "je soude les pieces";
+                break;
+                case "assistant mécanicien":
+                    echo "j'assiste le mécaniciens";
+                    break;
+                    case "magasinière":
+                        echo "Je met en magasin les pieces et produits ";
+                        break;
+        }
     }
 }
 
