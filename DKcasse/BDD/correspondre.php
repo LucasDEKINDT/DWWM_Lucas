@@ -2,34 +2,34 @@
 
 class Correspondre{
 
-    private $idpieces;
+    private $IdPieces;
 
-    private $idmodele;
+    private $IdModele;
 
-    public function __construct($idpieces,$idmodele){
-        $this->idpieces = $idpieces;
-        $this->idmodele = $idmodele;
+    public function __construct($IdPieces,$IdModele){
+        $this->IdPieces = $IdPieces;
+        $this->IdModele = $IdModele;
     }
 
 	
-	public function getIdpieces() {
-		return $this->idpieces;
+	public function getIdPieces() {
+		return $this->IdPieces;
 	}
 	
 	
-	public function setIdpieces($idpieces){
-		$this->idpieces = $idpieces;
+	public function setIdPieces($IdPieces){
+		$this->IdPieces = $IdPieces;
 		
 	}
 
 	
-	public function getIdmodele() {
-		return $this->idmodele;
+	public function getIdModele() {
+		return $this->IdModele;
 	}
 	
 	
-	public function setIdmodele($idmodele){
-		$this->idmodele = $idmodele;
+	public function setIdModele($IdModele){
+		$this->IdModele = $IdModele;
 		
 	}
 }

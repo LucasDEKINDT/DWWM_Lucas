@@ -2,34 +2,34 @@
 
 class Categorie{
     
-    private $idcategorie;
+    private $IdCategorie;
 
-    private $nomcategorie;
+    private $NomCategorie;
 
-    public function __construct($idcategorie,$nomcategorie){
-        $this->idcategorie = $idcategorie;
-        $this->nomcategorie = $nomcategorie;
+    public function __construct($IdCategorie,$NomCategorie){
+        $this->IdCategorie = $IdCategorie;
+        $this->NomCategorie = $NomCategorie;
     }
 
 	
-	public function getIdcategorie() {
-		return $this->idcategorie;
+	public function getIdCategorie() {
+		return $this->IdCategorie;
 	}
 	
 	
-	public function setIdcategorie($idcategorie){
-		$this->idcategorie = $idcategorie;
+	public function setIdCategorie($IdCategorie){
+		$this->IdCategorie = $IdCategorie;
 		
 	}
 
 	
-	public function getNomcategorie() {
-		return $this->nomcategorie;
+	public function getNomCategorie() {
+		return $this->NomCategorie;
 	}
 	
 	
-	public function setNomcategorie($nomcategorie){
-		$this->nomcategorie = $nomcategorie;
+	public function setNomCategorie($NomCategorie){
+		$this->NomCategorie = $NomCategorie;
 		
 	}
 }

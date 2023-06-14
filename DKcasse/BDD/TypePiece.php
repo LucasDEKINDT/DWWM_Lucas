@@ -6,9 +6,12 @@ class Typepiece{
 
     private $referencepiece;
 
-    public function __construct($idtypepiece,$referencepiece){
+	private $idCategorie;
+
+    public function __construct($idtypepiece,$referencepiece,$idCategorie){
         $this->idtypepiece = $idtypepiece;
         $this->referencepiece = $referencepiece;
+		$this->idCategorie = $idCategorie;
     }
 
 	
@@ -30,6 +33,17 @@ class Typepiece{
 	
 	public function setReferencepiece($referencepiece){
 		$this->referencepiece = $referencepiece;
+		
+	}
+
+	
+	public function getIdCategorie() {
+		return $this->idCategorie;
+	}
+	
+	
+	public function setIdCategorie($idCategorie){
+		$this->idCategorie = $idCategorie;
 		
 	}
 }

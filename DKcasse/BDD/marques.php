@@ -2,34 +2,48 @@
 
 class Marque{
 
-    private $idmarque;
+    private $IdMarque;
 
-    private $nommarque;
+    private $NomMarque;
 
-    public function __construct($idmarque,$nommarque){
-        $this->idmarque = $idmarque;
-        $this->nommarque = $nommarque;
+	private $IdModele;
+
+    public function __construct($IdMarque,$NomMarque,$IdModele){
+        $this->IdMarque = $IdMarque;
+        $this->NomMarque = $NomMarque;
+		$this->IdModele = $IdModele;
     }
 
 	
-	public function getIdmarque() {
-		return $this->idmarque;
+	public function getIdMarque() {
+		return $this->IdMarque;
 	}
 	
 	
-	public function setIdmarque($idmarque){
-		$this->idmarque = $idmarque;
+	public function setIdMarque($IdMarque){
+		$this->IdMarque = $IdMarque;
 		
 	}
 
 	
-	public function getNommarque() {
-		return $this->nommarque;
+	public function getNomMarque() {
+		return $this->NomMarque;
 	}
 	
 	
-	public function setNommarque($nommarque){
-		$this->nommarque = $nommarque;
+	public function setNomMarque($NomMarque){
+		$this->NomMarque = $NomMarque;
+		
+	}
+
+	
+	public function getIdModele() {
+		return $this->IdModele;
+	}
+	
+	
+	public function setIdModele($IdModele){
+		$this->IdModele = $IdModele;
 		
 	}
 }

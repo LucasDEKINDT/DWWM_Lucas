@@ -9,11 +9,14 @@ class Pieces{
 
     private $stock;
 
-public function __construct($idpieces,$nompiece,$prix,$stock){
+	private $idTypePiece;
+
+public function __construct($idpieces,$nompiece,$prix,$stock,$idTypePiece){
     $this->idpieces = $idpieces;
     $this->nompiece = $nompiece;
     $this->prix = $prix;
     $this->stock = $stock;
+	$this->idTypePiece = $idTypePiece;
 }
 
 
@@ -59,6 +62,18 @@ public function __construct($idpieces,$nompiece,$prix,$stock){
 	
 	public function setStock($stock){
 		$this->stock = $stock;
+		
+	}
+	
+
+	
+	public function getIdTypePiece() {
+		return $this->idTypePiece;
+	}
+	
+	
+	public function setIdTypePiece($idTypePiece){
+		$this->idTypePiece = $idTypePiece;
 		
 	}
 }
