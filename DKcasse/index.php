@@ -1,100 +1,89 @@
 <?php
-require_once "connexion.php";
-require_once "pieces.php";
-require_once "Modeles.php";
-require_once "Categorie.php";
-require_once "TypePiece.php";
-require_once "correspondre.php";
-require_once "marques.php";
-require_once "Utilisateur.php";
 
 
+define("URL", str_replace("index.php","",(isset($_SERVER['HTTPS']) ? "https" : "http").
+"://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
 
+require_once "controllers/pieceController.controllers.php";
+$pieceController = new PieceController;
 
+try{
+    if(empty($_GET['page'])){
+        require "views/accueil.php";
+    } else {
+        $url = explode("/", filter_var($_GET['page']),FILTER_SANITIZE_URL);
 
-// $categorie1 = new Categorie(1 , 'Mecanique');
-
-// $categorie1->affichagecategorie();
-
-// echo "<br> <br>";
-/********************************************************/
-/********************* REQUETE SIMPLE *******************/
-/********************************************************/
-$requete = $db->query("SELECT * FROM pieces "); // $requete est un objet de type PDO_Statement
-while ($donnees = $requete->fetch(PDO::FETCH_ASSOC)) // le while permet de boucler sur les enregistrements
-// il s'arrete quand fetch renvoi false
-{
-    var_dump($donnees);
-    $piece[] = new Piece($donnees);
+        switch($url[0]){
+            case "accueil" : require "views/accueil.php";
+            break;
+            case "pieces" : 
+                if(empty($url[1])){
+                    $pieceController->afficherPieces();
+                } else if($url[1] === "l") {
+                    $pieceController->afficherpiece($url[2]);
+                } else if($url[1] === "a") {
+                    $pieceController->ajoutpiece();
+                } else if($url[1] === "m") {
+                    $pieceController->modificationpiece($url[2]);
+                } else if($url[1] === "s") {
+                    $pieceController->suppressionPiece($url[2]);
+                } else if($url[1] === "av") {
+                    $pieceController->ajoutPieceValidation();
+                } else if($url[1] === "mv") {
+                    $pieceController->modificationPieceValidation();
+                }
+                else {
+                    throw new Exception("La page n'existe pas");
+                }
+            break;
+            default : throw new Exception("La page n'existe pas");
+        }
+    }
 }
-var_dump($piece);
-
-
-
-
-// $typepiece1 = new Typepiece(1,'mecanique rond',1);
-$requete = $db->query("SELECT * FROM typepiece "); // $requete est un objet de type PDO_Statement
-while ($donnees = $requete->fetch(PDO::FETCH_ASSOC)) // le while permet de boucler sur les enregistrements
-// il s'arrete quand fetch renvoi false
-{
-    var_dump($donnees);
-    $typepiece[] = new Typepiece($donnees);
+catch(Exception $e){
+    $msg = $e->getMessage();
+    require "views/error.view.php";
+   
 }
-var_dump($typepiece);
-// $typepiece1->affichagetypepiece();
+require_once "controllers/modeleController.controllers.php";
+$modeleController = new ModeleController;
 
-// echo "<br> <br>";
+try{
+    if(empty($_GET['page'])){
+        require "views/accueil.php";
+    } else {
+        $url = explode("/", filter_var($_GET['page']),FILTER_SANITIZE_URL);
 
-// $modele1 = new Modele(1,"clio",2009);
-$requete = $db->query("SELECT * FROM modeles "); // $requete est un objet de type PDO_Statement
-while ($donnees = $requete->fetch(PDO::FETCH_ASSOC)) // le while permet de boucler sur les enregistrements
-// il s'arrete quand fetch renvoi false
-{
-    var_dump($donnees);
-    $modele[] = new Modele($donnees);
+        switch($url[0]){
+            case "accueil" : require "views/accueil.php";
+            break;
+            case "modeles" : 
+                if(empty($url[1])){
+                    $modeleController->afficherModeles();
+                } else if($url[1] === "l") {
+                    $modeleController->afficherModele($url[2]);
+                } else if($url[1] === "a") {
+                    $modeleController->ajoutModele();
+                } else if($url[1] === "m") {
+                    $modeleController->modificationModele($url[2]);
+                } else if($url[1] === "s") {
+                    $modeleController->suppressionModele($url[2]);
+                } else if($url[1] === "av") {
+                    $modeleController->ajoutModeleValidation();
+                } else if($url[1] === "mv") {
+                    $modeleController->modificationModeleValidation();
+                }
+                else {
+                    throw new Exception("La page n'existe pas");
+                }
+            break;
+            default : throw new Exception("La page n'existe pas");
+        }
+    }
 }
-var_dump($modele);
-// $modele1->affichagemodele();
-
-// echo "<br> <br>";
-
-// $marque1 = new Marque(1,'renault',1);
-$requete = $db->query("SELECT * FROM marques"); // $requete est un objet de type PDO_Statement
-while ($donnees = $requete->fetch(PDO::FETCH_ASSOC)) // le while permet de boucler sur les enregistrements
-// il s'arrete quand fetch renvoi false
-{
-    var_dump($donnees);
-    $marque[] = new Marque($donnees);
+catch(Exception $e){
+    $msg = $e->getMessage();
+    require "views/error.view.php";
+   
 }
-var_dump($marque);
-// $marque1->affichagemarque();
-
-// echo "<br> <br>";
-
-// $correspondre1 = new Correspondre(1,1);
-$requete = $db->query("SELECT * FROM correspondre "); // $requete est un objet de type PDO_Statement
-while ($donnees = $requete->fetch(PDO::FETCH_ASSOC)) // le while permet de boucler sur les enregistrements
-// il s'arrete quand fetch renvoi false
-{
-    var_dump($donnees);
-    $correspondre[] = new Correspondre($donnees);
-}
-var_dump($correspondre);
-// $correspondre1->affichagecorres();
-
-// echo "<br> <br>";
-
-// $utilisateur1 = new Utilisateur(1,true,'dekindt','lucas','lucas.dekindt@ahoo.fr','azertyuiop789');
-
-$requete = $db->query("SELECT * FROM utilisateur "); // $requete est un objet de type PDO_Statement
-while ($donnees = $requete->fetch(PDO::FETCH_ASSOC)) // le while permet de boucler sur les enregistrements
-// il s'arrete quand fetch renvoi false
-{
-    var_dump($donnees);
-    $utilisateur[] = new Utilisateur($donnees);
-}
-var_dump($utilisateur);
-
-
-// $utilisateur1->affichageutilisateur();
-
+require_once "views/template.php";
