@@ -22,11 +22,12 @@ endif;
     for($i=0; $i < count($modele);$i++) : 
     ?>
     <tr>
+    <td class="align-middle"><a href="<?= URL ?>modeles/l/<?= $modele[$i]->getIdmodele(); ?>"><?= $modele[$i]->getAnnee(); ?></a></td>
         <td class="align-middle"><a href="<?= URL ?>modeles/l/<?= $modele[$i]->getIdmodele(); ?>"><?= $modele[$i]->getNommodele(); ?></a></td>
-        <td class="align-middle"><?= $modele[$i]->getAnnee(); ?></td>
+        
         <td class="align-middle"><a href="<?= URL ?>modeles/m/<?= $modele[$i]->getIdmodele(); ?>" class="btn btn-warning">Modifier</a></td>
         <td class="align-middle">
-            <form method="POST" action="<?= URL ?>modeles/s/<?= $modele[$i]->getIdmodele(); ?>" onSubmit="return confirm('Voulez-vous vraiment supprimer le Modele ?');">
+            <form method="POST" action="<?= URL ?>modeles/s/<?= $modele[$i]->getIdmodele(); ?>" onSubmit="return confirm('Voulez-vous vraiment supprimer le modele ?');">
                 <button class="btn btn-danger" type="submit">Supprimer</button>
             </form>
         </td>

@@ -10,12 +10,12 @@ class ModeleController{
     }
 
     public function afficherModeles(){
-        $piece = $this->ModeleManager->getModeles();
+        $modele = $this->ModeleManager->getModeles();
         require "views/Modeles.view.php";
     }
 
-    public function afficherModele($idpiece){
-        $piece = $this->ModeleManager->getModeleById($idpiece);
+    public function afficherModele($idmodele){
+        $modele = $this->ModeleManager->getModeleById($idmodele);
         require "views/afficherModele.view.php";
     }
 

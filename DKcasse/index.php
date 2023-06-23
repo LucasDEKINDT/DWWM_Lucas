@@ -3,10 +3,10 @@
 
 define("URL", str_replace("index.php","",(isset($_SERVER['HTTPS']) ? "https" : "http").
 "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
-
+require_once "controllers/modeleController.controllers.php";
 require_once "controllers/pieceController.controllers.php";
 $pieceController = new PieceController;
-
+$modeleController = new ModeleController;
 try{
     if(empty($_GET['page'])){
         require "views/accueil.php";
@@ -36,27 +36,6 @@ try{
                     throw new Exception("La page n'existe pas");
                 }
             break;
-            default : throw new Exception("La page n'existe pas");
-        }
-    }
-}
-catch(Exception $e){
-    $msg = $e->getMessage();
-    require "views/error.view.php";
-   
-}
-require_once "controllers/modeleController.controllers.php";
-$modeleController = new ModeleController;
-
-try{
-    if(empty($_GET['page'])){
-        require "views/accueil.php";
-    } else {
-        $url = explode("/", filter_var($_GET['page']),FILTER_SANITIZE_URL);
-
-        switch($url[0]){
-            case "accueil" : require "views/accueil.php";
-            break;
             case "modeles" : 
                 if(empty($url[1])){
                     $modeleController->afficherModeles();
@@ -79,11 +58,20 @@ try{
             break;
             default : throw new Exception("La page n'existe pas");
         }
-    }
-}
+    }  
+       
+            
+            
+        }
 catch(Exception $e){
     $msg = $e->getMessage();
     require "views/error.view.php";
    
 }
+
+
+
+
+   
+
 require_once "views/template.php";
