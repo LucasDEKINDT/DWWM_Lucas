@@ -65,7 +65,5 @@ class Typepiece{
     //         }
     //     }
     // }
-	public function affichagetypepiece(){
-		echo "L'id du type de la piece est : ".$this->idCategorie. " sa référence est :  ".$this->referencepiece. " l'id categorie est : ".$this->idCategorie;
-	}
+	
 }

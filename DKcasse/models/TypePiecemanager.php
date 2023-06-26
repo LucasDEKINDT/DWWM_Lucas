@@ -7,15 +7,15 @@ require_once "TypePiece.php";
 class Typepiecemanager extends Model{
     private $typepieces;//tableau de Livre
 
-    public function ajoutPiece($typepiece){
+    public function ajoutTypepiece($typepiece){
         $this->typepieces[] = $typepiece;
     }
 
-    public function getPieces(){
+    public function getTypepieces(){
         return $this->typepieces;
     }
 
-    public function chargementpiece(){
+    public function chargementTypepiece(){
         $req = $this->getBdd()->prepare("SELECT * FROM typepiece");
         $req->execute();
         $mestypepiece = $req->fetchAll(PDO::FETCH_ASSOC);
@@ -48,11 +48,11 @@ class Typepiecemanager extends Model{
 
         if($resultat > 0){
             $typepiece = new Typepiece($this->getBdd()->lastInsertId(),$Referencepiece,$IdCategorie);
-            $this->ajoutPiece($typepiece);
+            $this->ajoutTypepiece($typepiece);
         }        
     }
 
-    public function suppressionPieceBD($idtypepiece){
+    public function suppressionTypepieceBD($idtypepiece){
         $req = "
         Delete from typepiece where IdTypepiece = :IdTypepiece
         ";
@@ -72,15 +72,15 @@ class Typepiecemanager extends Model{
         set Referencepiece = :Referencepiece, IdCategorie = :IdCategorie
         where IdTypepiece = :IdTypepiece";
         $stmt = $this->getBdd()->prepare($req);
-        $stmt->bindValue(":IdPiece",$idtypepiece,PDO::PARAM_INT);
+        $stmt->bindValue(":IdTypepiece",$idtypepiece,PDO::PARAM_INT);
         $stmt->bindValue(":Referencepiece",$Referencepiece,PDO::PARAM_STR);
         $stmt->bindValue(":IdCategorie",$IdCategorie,PDO::PARAM_INT);
         $resultat = $stmt->execute();
         $stmt->closeCursor();
 
         if($resultat > 0){
-            $this->gettypepieceById($idtypepiece)->setNompiece($Referencepiece);
-            $this->gettypepieceById($idtypepiece)->setNompiece($IdCategorie);
+            $this->gettypepieceById($idtypepiece)->setReferencepiece($Referencepiece);
+            $this->gettypepieceById($idtypepiece)->setReferencepiece($IdCategorie);
             
         }
     }

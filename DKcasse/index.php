@@ -5,8 +5,10 @@ define("URL", str_replace("index.php","",(isset($_SERVER['HTTPS']) ? "https" : "
 "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
 require_once "controllers/modeleController.controllers.php";
 require_once "controllers/pieceController.controllers.php";
+require_once "controllers/typepieceControllers.php";
 $pieceController = new PieceController;
 $modeleController = new ModeleController;
+$typepieceController = new TypepieceController;
 try{
     if(empty($_GET['page'])){
         require "views/accueil.php";
@@ -51,6 +53,26 @@ try{
                     $modeleController->ajoutModeleValidation();
                 } else if($url[1] === "mv") {
                     $modeleController->modificationModeleValidation();
+                }
+                else {
+                    throw new Exception("La page n'existe pas");
+                }
+            break;
+            case "typepiece" : 
+                if(empty($url[1])){
+                    $typepieceController->afficherTypepieces();
+                } else if($url[1] === "l") {
+                    $typepieceController->afficherTypepiece($url[2]);
+                } else if($url[1] === "a") {
+                    $typepieceController->ajoutTypepiece();
+                } else if($url[1] === "m") {
+                    $typepieceController->modificationTypepiece($url[2]);
+                } else if($url[1] === "s") {
+                    $typepieceController->suppressionTypepiece($url[2]);
+                } else if($url[1] === "av") {
+                    $typepieceController->ajoutTypepieceValidation();
+                } else if($url[1] === "mv") {
+                    $typepieceController->modificationTypepieceValidation();
                 }
                 else {
                     throw new Exception("La page n'existe pas");
