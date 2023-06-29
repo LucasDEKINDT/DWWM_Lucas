@@ -1,5 +1,5 @@
 <?php
-require_once "models/TypePiecemanager.php";
+require_once "models/typepiece/TypePiecemanager.php";
 
 class TypepieceController{
     private $TypepieceManager;
@@ -11,20 +11,20 @@ class TypepieceController{
 
     public function afficherTypepieces(){
         $typepiece = $this->TypepieceManager->getTypepieces();
-        require "views/Typepiece.php";
+        require "views/typepiece/Typepiece.php";
     }
 
     public function afficherTypepiece($idtypepiece){
         $typepiece = $this->TypepieceManager->getTypepieceById($idtypepiece);
-        require "views/afficherTypepiece.php";
+        require "views/typepiece/afficherTypepiece.php";
     }
 
     public function ajoutTypepiece(){
-        require "views/ajoutTypepiece.php";
+        require "views/typepiece/ajoutTypepiece.php";
     }
 
     public function ajoutTypepieceValidation(){
-        
+        var_dump($_POST['Referencepiece']);
         $this->TypepieceManager->ajoutTypepieceBd($_POST['Referencepiece'],$_POST['IdCategorie']);
         
         $_SESSION['alert'] = [
@@ -46,7 +46,7 @@ class TypepieceController{
 
     public function modificationTypepiece($idtypepiece){
         $typepiece = $this->TypepieceManager->getTypepieceById($idtypepiece);
-        require "views/modifiertypepiece.php";
+        require "views/typepiece/modifierTypepiece.php";
     }
 
     public function modificationTypepieceValidation(){

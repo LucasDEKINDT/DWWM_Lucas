@@ -1,5 +1,5 @@
 <?php
-require_once "models/piecemanager.php";
+require_once "models/piece/piecemanager.php";
 
 class PieceController{
     private $PieceManager;
@@ -11,16 +11,16 @@ class PieceController{
 
     public function afficherPieces(){
         $piece = $this->PieceManager->getPieces();
-        require "views/pieces.view.php";
+        require "views/piece/pieces.view.php";
     }
 
     public function afficherPiece($idpiece){
         $piece = $this->PieceManager->getPieceById($idpiece);
-        require "views/afficherLivre.view.php";
+        require "views/piece/afficherLivre.view.php";
     }
 
     public function ajoutPiece(){
-        require "views/ajoutLivre.view.php";
+        require "views/piece/ajoutLivre.view.php";
     }
 
     public function ajoutPieceValidation(){
@@ -46,7 +46,7 @@ class PieceController{
 
     public function modificationPiece($idpiece){
         $piece = $this->PieceManager->getPieceById($idpiece);
-        require "views/modifierLivre.view.php";
+        require "views/piece/modifierLivre.view.php";
     }
 
     public function modificationPieceValidation(){

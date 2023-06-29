@@ -6,9 +6,12 @@ define("URL", str_replace("index.php","",(isset($_SERVER['HTTPS']) ? "https" : "
 require_once "controllers/modeleController.controllers.php";
 require_once "controllers/pieceController.controllers.php";
 require_once "controllers/typepieceControllers.php";
+require_once "controllers/categorieController.php";
+
 $pieceController = new PieceController;
 $modeleController = new ModeleController;
 $typepieceController = new TypepieceController;
+$categorieController = new CategorieController;
 try{
     if(empty($_GET['page'])){
         require "views/accueil.php";
@@ -73,6 +76,26 @@ try{
                     $typepieceController->ajoutTypepieceValidation();
                 } else if($url[1] === "mv") {
                     $typepieceController->modificationTypepieceValidation();
+                }
+                else {
+                    throw new Exception("La page n'existe pas");
+                }
+            break;
+            case "categorie" : 
+                if(empty($url[1])){
+                    $categorieController->afficherCategories();
+                } else if($url[1] === "l") {
+                    $categorieController->afficherCategorie($url[2]);
+                } else if($url[1] === "a") {
+                    $categorieController->ajoutCategorie();
+                } else if($url[1] === "m") {
+                    $categorieController->modificationCategorie($url[2]);
+                } else if($url[1] === "s") {
+                    $categorieController->suppressionCategorie($url[2]);
+                } else if($url[1] === "av") {
+                    $categorieController->ajoutCategorieValidation();
+                } else if($url[1] === "mv") {
+                    $categorieController->modificationCategorieValidation();
                 }
                 else {
                     throw new Exception("La page n'existe pas");

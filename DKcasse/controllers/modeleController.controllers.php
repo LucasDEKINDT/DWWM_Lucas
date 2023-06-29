@@ -1,5 +1,5 @@
 <?php
-require_once "models/modelemanager.php";
+require_once "models/modele/modelemanager.php";
 
 class ModeleController{
     private $ModeleManager;
@@ -11,20 +11,20 @@ class ModeleController{
 
     public function afficherModeles(){
         $modele = $this->ModeleManager->getModeles();
-        require "views/Modeles.view.php";
+        require "views/modele/modeles.view.php";
     }
 
     public function afficherModele($idmodele){
         $modele = $this->ModeleManager->getModeleById($idmodele);
-        require "views/afficherModele.view.php";
+        require "views/modele/afficherModele.view.php";
     }
 
     public function ajoutModele(){
-        require "views/ajoutModele.view.php";
+        require "views/modele/ajoutModele.view.php";
     }
 
     public function ajoutModeleValidation(){
-        
+        var_dump($_POST['NomModele']);
         $this->ModeleManager->ajoutModeleBd($_POST['NomModele'],$_POST['Annee']);
         
         $_SESSION['alert'] = [
@@ -46,7 +46,7 @@ class ModeleController{
 
     public function modificationModele($idmodele){
         $modele = $this->ModeleManager->getModeleById($idmodele);
-        require "views/modifierModele.view.php";
+        require "views/modele/modifierModele.view.php";
     }
 
     public function modificationModeleValidation(){
