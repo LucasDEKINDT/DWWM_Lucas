@@ -14,8 +14,8 @@ class CategorieController{
         require "views/categorie/categorie.view.php";
     }
 
-    public function afficherCategorie($idcategorie){
-        $categorie = $this->CategorieManager->getCategorieById($idcategorie);
+    public function afficherCategorie($IdCategorie){
+        $categorie = $this->CategorieManager->getCategorieById($IdCategorie);
         require "views/categorie/afficherCategorie.view.php";
     }
 
@@ -35,8 +35,8 @@ class CategorieController{
         header('Location: '. URL . "categorie");
     }
 
-    public function suppressionCategorie($idcategorie){
-        $this->CategorieManager->suppressionCategorieBD($idcategorie);
+    public function suppressionCategorie($IdCategorie){
+        $this->CategorieManager->suppressionCategorieBD($IdCategorie);
         $_SESSION['alert'] = [
             "type" => "success",
             "msg" => "Suppression Réalisée"
@@ -44,8 +44,8 @@ class CategorieController{
         header('Location: '. URL . "categorie");
     }
 
-    public function modificationCategorie($idcategorie){
-        $modele = $this->CategorieManager->getCategorieById($idcategorie);
+    public function modificationCategorie($IdCategorie){
+        $categorie = $this->CategorieManager->getCategorieById($IdCategorie);
         require "views/categorie/modifierCategorie.view.php";
     }
 

@@ -6,6 +6,7 @@ ob_start();
 <form method="POST" action="<?= URL ?>categorie/mv" enctype="multipart/form-data">
     <div class="form-group">
         <label for="NomCategorie">Nom : </label>
+        
         <input type="text" class="form-control" id="NomCategorie" name="NomCategorie" value="<?= $categorie->getNomcategorie() ?>">
     </div>
    

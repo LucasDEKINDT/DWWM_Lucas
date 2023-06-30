@@ -27,59 +27,59 @@ class Categoriemanager extends Model{
         }
     }
 
-    public function getCategorieById($idcategorie){
+    public function getCategorieById($IdCategorie){
         for($i=0; $i < count($this->categories);$i++){
-            if($this->categories[$i]->getIdCategorie() === $idcategorie){
+            if($this->categories[$i]->getIdcategorie() === $IdCategorie){
                 return $this->categories[$i];
             }
         }
         throw new Exception("La categorie n'existe pas");
     }
 
-    public function ajoutCategorieBd($nomcategorie){
+    public function ajoutCategorieBd($NomCategorie){
         $req = "
         INSERT INTO categorie ( NomCategorie)
         values ( :NomCategorie)";
         $stmt = $this->getBdd()->prepare($req);
-        $stmt->bindValue(":NomCategorie",$nomcategorie,PDO::PARAM_STR);
+        $stmt->bindValue(":NomCategorie",$NomCategorie,PDO::PARAM_STR);
         $resultat = $stmt->execute();
         $stmt->closeCursor();
 
         if($resultat > 0){
-            $categorie = new Categorie($this->getBdd()->lastInsertId(),$nomcategorie);
+            $categorie = new Categorie($this->getBdd()->lastInsertId(),$NomCategorie);
             $this->ajoutCategorie($categorie);
         }        
     }
 
-    public function suppressionCategorieBD($idcategorie){
+    public function suppressionCategorieBD($IdCategorie){
         $req = "
         Delete from categorie where IdCategorie = :IdCategorie
         ";
         $stmt = $this->getBdd()->prepare($req);
-        $stmt->bindValue(":IdCategorie",$idcategorie,PDO::PARAM_INT);
+        $stmt->bindValue(":IdCategorie",$IdCategorie,PDO::PARAM_INT);
         $resultat = $stmt->execute();
         $stmt->closeCursor();
         if($resultat > 0){
-            $categorie = $this->getCategorieById($idcategorie);
+            $categorie = $this->getCategorieById($IdCategorie);
             unset($categorie);
         }
     }
 
-    public function modificationCategorieBD($idcategorie,$nomcategorie){
+    public function modificationCategorieBD($IdCategorie,$NomCategorie){
         $req = "
         update categorie
         set NomCategorie = :NomCategorie
         where IdCategorie = :IdCategorie";
         $stmt = $this->getBdd()->prepare($req);
-        $stmt->bindValue(":IdCategorie",$idcategorie,PDO::PARAM_INT);
-        $stmt->bindValue(":NomCategorie",$nomcategorie,PDO::PARAM_STR);
+        $stmt->bindValue(":IdCategorie",$IdCategorie,PDO::PARAM_INT);
+        $stmt->bindValue(":NomCategorie",$NomCategorie,PDO::PARAM_STR);
         
         
         $resultat = $stmt->execute();
         $stmt->closeCursor();
 
         if($resultat > 0){
-            $this->getCategorieById($idcategorie)->setNomCategorie($nomcategorie);
+            $this->getCategorieById($IdCategorie)->setNomcategorie($NomCategorie);
             
            
         }
