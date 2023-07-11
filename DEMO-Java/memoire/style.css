@@ -1,0 +1,62 @@
+ 
+
+  body{
+display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    width: 100vw;
+    
+    background-image: linear-gradient(to left, #09203f 0%, #327db6 100%);
+    
+  }
+h1{
+  text-align: center;
+  color: white;
+}
+#tapis{
+    border-spacing: 20px;
+    width: 75vw;
+    height: 90vh;
+    display: flex;
+    padding-bottom: 20px;
+}
+tr{
+    
+    height: 30vh;
+    width: 30vw;
+}
+td{
+    border-radius: 5px;
+    background-color: gray;
+   
+}
+#bravos{
+    text-align: center;
+    font-size: larger;
+    color: white;
+}
+#valeur_nombre{
+    text-align: center;
+    font-size: larger;
+    color: white;
+}
+
+
+  
+
+  
+
+    /* Pour ce qui est des propriétés du type perspective, transform, transition ou encore backface et selon les navigateurs Internet, il faut rajouter les préfixes correspondants: -webkit, -moz-, ms- ou -o*/
+   img{
+    padding-top: 10px;
+     width: 100%;
+     height: 100%;
+     cursor:pointer;
+   }
+   footer{
+     text-align: center;
+     color: white;
+     padding-top: 20vh;
+   }
