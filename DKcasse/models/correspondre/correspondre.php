@@ -1,47 +1,35 @@
 <?php
 
-class Modele{
-    
-    private $idmodele;
+class Correspondre{
 
-    private $nommodele;
+    private $IdTypePiece;
 
-    private $annee;
+    private $IdModele;
 
-    public function __construct($idmodele,$nommodele,$annee){
-        $this->idmodele = $idmodele;
-        $this->nommodele = $nommodele;
-        $this->annee = $annee;
+    public function __construct($IdTypePiece,$IdModele){
+        $this->IdTypePiece = $IdTypePiece;
+        $this->IdModele = $IdModele;
     }
 
 	
-	public function getIdmodele() {
-		return $this->idmodele;
+	public function getIdPieces() {
+		return $this->IdTypePiece;
 	}
 	
 	
-	public function setIdmodele($idmodele){
-		$this->idmodele = $idmodele;
+	public function setIdPieces($IdTypePiece){
+		$this->IdTypePiece = $IdTypePiece;
 		
 	}
 
 	
-	public function getNommodele() {
-		return $this->nommodele;
+	public function getIdModele() {
+		return $this->IdModele;
 	}
 	
 	
-	public function setNommodele($nommodele){
-		$this->nommodele = $nommodele;
-		
-	}
-    public function getAnnee() {
-		return $this->annee;
-	}
-	
-	
-	public function setAnnee($annee){
-		$this->annee = $annee;
+	public function setIdModele($IdModele){
+		$this->IdModele = $IdModele;
 		
 	}
 	// public function __construct(array $options = [])
@@ -63,6 +51,7 @@ class Modele{
     //         }
     //     }
     // }
-	
-    
+	public function affichagecorres(){
+		echo " L'id de la piece est : ".$this->IdTypePiece." l'id du modele est : ".$this->IdModele;
+	}
 }

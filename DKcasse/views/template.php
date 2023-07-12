@@ -29,6 +29,7 @@ $grade = isset($grade) ? $grade : 0;
                     <a class="nav-link" href="<?= URL ?>typepiece">Type Pieces</a>
                     <a class="nav-link" href="<?= URL ?>categorie">Categorie</a>
                     <a class="nav-link" href="<?= URL ?>marques">Marques</a>
+                    <a class="nav-link" href="<?= URL ?>utilisateur">utilisateur</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Catégorie</a>

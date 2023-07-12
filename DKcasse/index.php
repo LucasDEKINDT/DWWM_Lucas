@@ -8,11 +8,13 @@ require_once "controllers/pieceController.controllers.php";
 require_once "controllers/typepieceControllers.php";
 require_once "controllers/categorieController.php";
 require_once "controllers/marqueController.php";
+require_once "controllers/utilisateurController.php";
 $pieceController = new PieceController;
 $modeleController = new ModeleController;
 $typepieceController = new TypepieceController;
 $categorieController = new CategorieController;
 $marqueController = new MarqueController;
+$utilisateurController = new UtilisateurController;
 try{
     if(empty($_GET['page'])){
         require "views/accueil.php";
@@ -117,6 +119,26 @@ try{
                     $marqueController->ajoutMarqueValidation();
                 } else if($url[1] === "mv") {
                     $marqueController->modificationMarqueValidation();
+                }
+                else {
+                    throw new Exception("La page n'existe pas");
+                }
+            break;
+            case "utilisateur" : 
+                if(empty($url[1])){
+                    $utilisateurController->afficherUtilisateur();
+                } else if($url[1] === "l") {
+                    $utilisateurController->afficherUtilisateur($url[2]);
+                } else if($url[1] === "a") {
+                    $utilisateurController->ajoutUtilisateur();
+                } else if($url[1] === "m") {
+                    $utilisateurController->modificationUtilisateur($url[2]);
+                } else if($url[1] === "s") {
+                    $marqueController->suppressionUtilisateur($url[2]);
+                } else if($url[1] === "av") {
+                    $utilisateurController->ajoutUtilisateurValidation();
+                } else if($url[1] === "mv") {
+                    $utilisateurController->modificationUtilisateurValidation();
                 }
                 else {
                     throw new Exception("La page n'existe pas");
