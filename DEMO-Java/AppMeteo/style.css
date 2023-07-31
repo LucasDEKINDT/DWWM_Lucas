@@ -25,9 +25,9 @@ margin-top: 10vh;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 25vw;
-    height: 40vh;
-    background-color: rgb(59, 41, 221);
+    width: 75vw;
+    height: 50vh;
+    background-color: rgb(128, 126, 139);
     border: black 0.3px solid;
     border-radius: 10%;
     box-shadow: 5px 5px 5px black;
@@ -45,4 +45,15 @@ padding-bottom: 5vh;
     display: flex;
     justify-content: center;
     margin-top: 5vh;
+  }
+  .f4{
+    width: 55vw;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+background-color: #0000003a;
+    border: black 0.3px solid;
+    border-radius: 5vh;
   }

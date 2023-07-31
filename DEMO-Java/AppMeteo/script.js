@@ -50,6 +50,8 @@ function recevoirTemperature(ville) {
     requete.responseType = 'json';
     requete.send();
 
+   
+    
     requete.onload = function() {
         if (requete.readyState === XMLHttpRequest.DONE) {
             if (requete.status === 200) {
