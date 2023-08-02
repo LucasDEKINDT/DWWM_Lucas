@@ -1,0 +1,68 @@
+*{
+    margin: auto;
+}
+header{
+    background-color: black;
+    color: white;
+    line-height: 6;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    
+   
+    
+}
+a {
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    width: 10vw;
+    text-align: center;
+    line-height: 3;
+    color:black;
+     
+  }
+  a:link,
+a:visited,
+a:focus {
+    background-color:rgb(46, 175, 207);
+}
+
+a:hover {
+  background: rgb(3, 40, 255);
+  color: white;
+}
+
+a:active {
+  background: red;
+  color: white;
+}
+
+.section-1{
+   background-color: wheat;
+    padding-top:15vh
+}
+.div-1{
+    width: 100%;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+}
+.div-2{
+    
+  height: 40vh;
+  width: 40vw;
+  
+  background-color: aqua;
+    
+}
+.h2-1{
+    align-self: center;
+    
+}
+.h2-2{
+    justify-self: end;
+}
