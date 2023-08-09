@@ -1,0 +1,483 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  height: 2000px;
+  width: 100%;
+}
+header {
+  display: flex;
+  height: 500px;
+  flex-direction: column;
+  align-items: center;
+  background: url(image/header.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+header .tete {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 150vh;
+  height: 10vh;
+  align-self: flex-start;
+}
+header .tete img {
+  align-self: center;
+  padding-left: 10vh;
+}
+header .tete .liens {
+  display: flex;
+  width: 100vh;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  padding-right: 10px;
+}
+header .tete .liens a {
+  padding-left: 50px;
+  padding-top: 5%;
+  color: white;
+  text-decoration: none;
+}
+header .tete2 {
+  display: flex;
+  flex-direction: column;
+  width: 50vh;
+  height: 30vh;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+header .tete2 img {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 200px;
+}
+header .tete2 p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+.sec {
+  display: flex;
+  padding-top: 30px;
+  padding-left: 200px;
+  padding-bottom: 30px;
+  justify-content: center;
+}
+.sec .mont {
+  display: flex;
+  flex: 1;
+  height: 50vh;
+  margin-right: 15px;
+}
+.sec .div1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 100px;
+  flex: 3;
+  margin-right: 300px;
+}
+.sec h2 {
+  display: flex;
+}
+.sec .topp {
+  display: flex;
+  padding-top: 50px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #2D6187;
+}
+.sec .bott {
+  padding-top: 50px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #2D6187;
+}
+.sec .div2 {
+  border: 1px solid black;
+  margin-top: 20px;
+  height: 50px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sec .div2 a {
+  color: black;
+  text-decoration: none;
+  padding-right: 10px;
+}
+article {
+  display: flex;
+  background-color: #E5F5E5;
+  flex-direction: column;
+  align-items: center;
+  height: 600px;
+}
+article .text {
+  display: flex;
+  flex-direction: column;
+  width: 80vh;
+}
+article .text h2 {
+  display: flex;
+  align-self: center;
+  padding-bottom: 10px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 42px;
+  padding-top: 30px;
+}
+article .text p {
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #2D6187;
+}
+article img {
+  padding-left: 50px;
+  padding-top: 20px;
+}
+article .ul1 {
+  display: flex;
+  flex-direction: row;
+  width: 100vh;
+  justify-content: space-between;
+  list-style-type: none;
+  padding-top: 10px;
+}
+article .ul1 .li1 {
+  display: flex;
+  padding-left: 80px;
+}
+article .ul2 {
+  display: flex;
+  flex-direction: row;
+  width: 100vh;
+  justify-content: space-between;
+  list-style-type: none;
+  color: #28ABB9;
+}
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 100%;
+}
+aside .ttr {
+  padding-bottom: 40px;
+}
+aside div {
+  display: flex;
+  flex-direction: row;
+  column-gap: 30px;
+  width: 80vh;
+}
+aside div .piscine {
+  background: #FFFFFF;
+  border: 1px solid #28ABB9;
+  border-radius: 0px 0px 0px 20px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  height: 200px;
+  width: 80vh;
+  padding-top: 10px;
+}
+aside div .wifi {
+  background: #FFFFFF;
+  border: 1px solid #28ABB9;
+  border-radius: 0px 0px 0px 20px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  height: 200px;
+  width: 80vh;
+  padding-top: 10px;
+}
+aside div .resto {
+  background: #FFFFFF;
+  border: 1px solid #28ABB9;
+  border-radius: 0px 0px 0px 20px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  height: 200px;
+  width: 80vh;
+  padding-top: 10px;
+}
+.herb {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background: url(image/hebergement.jpg);
+}
+.herb .h21 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  color: #FFFFFF;
+}
+.herb .h22 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 56px;
+  color: #FFFFFF;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.herb button {
+  width: 200px;
+  height: 50px;
+  background: #28ABB9;
+  box-shadow: 0px -3px 4px rgba(0, 0, 0, 0.25), 0px 3px 3px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
+.herb a {
+  color: white;
+  text-decoration: none;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+footer .div1 {
+  text-align: center;
+}
+footer .div1 h2 {
+  padding-bottom: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 42px;
+  color: #000000;
+}
+footer .div1 p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  padding-bottom: 100px;
+  color: #2D6187;
+}
+footer .div4 {
+  display: flex;
+  column-gap: 20px;
+}
+footer .div4 .haut {
+  display: flex;
+  align-self: flex-start;
+  margin-left: 10px;
+}
+footer .div4 .bas {
+  display: flex;
+  align-self: flex-end;
+  margin-right: 20px;
+}
+footer .div4 p {
+  margin-left: 10px;
+}
+footer .div4 h4 {
+  padding-top: 10px;
+  display: flex;
+  align-self: flex-start;
+  margin-left: 10px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #2D6187;
+}
+footer .div2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 458px;
+  height: 200px;
+  background-color: #A8DDA8;
+  border-radius: 0px 0px 0px 24px;
+}
+footer .div3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 458px;
+  height: 200px;
+  background-color: #A8DDA8;
+  border-radius: 0px 0px 0px 24px;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 768px;
+  }
+  header .tete {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  header .tete .liens {
+    display: flex;
+    justify-content: flex-start;
+  }
+  header .tete img {
+    display: flex;
+    align-self: flex-start;
+  }
+  article {
+    height: 500px;
+  }
+  article img {
+    width: 225px;
+  }
+  article .ul1 {
+    justify-content: center;
+    column-gap: 110px;
+  }
+  article .ul2 {
+    justify-content: center;
+    column-gap: 110px;
+  }
+  footer .div2 {
+    width: 300px;
+    height: 250px;
+  }
+  footer .div3 {
+    width: 300px;
+    height: 250px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .container {
+    width: 320px;
+  }
+  header {
+    width: 320px;
+  }
+  header .tete .liens {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  header .tete2 {
+    padding-top: 120px;
+  }
+  header .tete2 p {
+    width: 200px;
+  }
+  .sec .mont {
+    display: none;
+  }
+  article {
+    height: 1200px;
+  }
+  article p {
+    display: flex;
+    align-self: center;
+    text-align: end;
+    height: 200px;
+    width: 200px;
+  }
+  article .ul3 {
+    display: flex;
+    width: 300px;
+    padding: 30px;
+  }
+  article .ul1 {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 30px;
+  }
+  article .ul1 .li1 {
+    padding: 0px;
+  }
+  article .ul2 {
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    row-gap: 30px;
+  }
+  aside {
+    padding-top: 30px;
+    height: 900px;
+    width: 170px;
+  }
+  aside .service {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 1000px;
+    text-align: start;
+    row-gap: 40px;
+  }
+  aside .service p {
+    display: flex;
+    align-self: flex-start;
+    text-align: start;
+    height: 200px;
+    width: 200px;
+  }
+  aside .service .piscine {
+    width: 250px;
+    height: 230px;
+    row-gap: 10px;
+  }
+  aside .service .wifi {
+    width: 250px;
+    height: 230px;
+    row-gap: 10px;
+  }
+  aside .service .resto {
+    width: 250px;
+    height: 230px;
+    row-gap: 10px;
+  }
+  .herb {
+    height: 300px;
+  }
+  .herb .h22 {
+    font-size: 40px;
+  }
+  footer {
+    padding-top: 60px;
+    height: 900px;
+  }
+  footer .p1 {
+    display: flex;
+    align-self: center;
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    padding-left: 100px;
+  }
+  footer .div4 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+  }
+}

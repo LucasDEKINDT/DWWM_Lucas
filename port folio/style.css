@@ -2,6 +2,9 @@
     margin: auto;
     max-width: 100vw;
 }
+html {
+  scroll-behavior: smooth;
+}
 header{
     background-color: black;
     color: white;
@@ -16,7 +19,7 @@ header{
    
     
 }
-a {
+.a1 {
     outline: none;
     text-decoration: none;
     display: inline-block;
@@ -24,20 +27,21 @@ a {
     text-align: center;
     line-height: 3;
     color:black;
+    margin-left: 2vw;
      
   }
-  a:link,
-a:visited,
-a:focus {
+  .a1:link,
+  .a1:visited,
+  .a1:focus {
     background-color:rgb(46, 175, 207);
 }
 
-a:hover {
+a.a1:hover {
   background: rgb(3, 40, 255);
   color: white;
 }
 
-a:active {
+.a1:active {
   background: red;
   color: white;
 }
@@ -83,7 +87,7 @@ a:active {
 
 .section-2{
     background-color:rgb(216, 216, 216);
-    height: 90vh;
+    height: 100vh;
     width: 100vw;
 
 }
@@ -104,23 +108,23 @@ a:active {
   background-color: rgb(68, 139, 139);
   color:black;
   width: 40vw;
-  padding-left: 5vw;
-  height: 20vh;
+  padding-left: 2vw;
+  height: 25vh;
   
   
 }
 .card-2 , .card-3{
   background-color:rgb(179, 208, 209);
   width: 40vw;
-  padding-left: 5vw;
-  height: 20vh;
+  padding-left: 2vw;
+  height: 25vh;
   
 }
 .card-1 , .card-3{
   margin-right: 1vw;
 }
 .h2-3{
-  padding-top: 15vh;
+  padding-top: 30vh;
   font-size:xx-large ;
 }
 .section-3{
@@ -189,26 +193,47 @@ h3{
   
   height: 35vh;
   width: 20vw;
-  border: 1rem solid black;
+  border: 0.5rem solid rgb(157, 214, 252);
   border-radius: 100%;
   background-image: url(./images/appmeteo.png);background-position: center;
   background-size: cover;
+  
 }
 .div-15{
   
   height: 35vh;
   width: 20vw;
-  border: 1rem solid black;
+  border: 0.5rem solid rgb(157, 214, 252);
   border-radius: 100%;
-  background-image: url(./images/appmeteo.png);background-position: center;
+  background-image: url(./images/dkcassea.PNG);background-position: center;
   background-size: cover;
 }
 .div-20{
   
   height: 35vh;
   width: 20vw;
-  border: 1rem solid black;
+  border: 0.5rem solid rgb(157, 214, 252);
   border-radius: 100%;
-  background-image: url(./images/appmeteo.png);background-position: center;
+  background-image: url(./images/massifa.png);background-position: center;
   background-size: cover;
+}
+.a2{
+  color: black;
+  text-decoration: none;
+}
+.a2:visited{
+  color: black;
+  text-decoration: none;
+}
+.div-14:hover,.div-15:hover,.div-20:hover{
+box-shadow: 5px 5px 5px 5px rgb(179, 208, 209);
+}
+p{
+  text-align: start;
+  padding-top:1vh;
+
+}
+h5{
+  text-align: center;
+  font-size: large;
 }
