@@ -5,51 +5,39 @@
 html {
   scroll-behavior: smooth;
 }
-header{
-    background-color: black;
-    color: white;
-    line-height: 6;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    z-index: 10;
-    
-   
-    
+a {
+  text-decoration: none;
 }
-.a1 {
-    outline: none;
-    text-decoration: none;
-    display: inline-block;
-    width: 10vw;
-    text-align: center;
-    line-height: 3;
-    color:black;
-    margin-left: 2vw;
-     
-  }
-  .a1:link,
-  .a1:visited,
-  .a1:focus {
-    background-color:rgb(46, 175, 207);
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #42455a;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #00c2cb;
 }
-
-a.a1:hover {
-  background: rgb(3, 40, 255);
-  color: white;
+header nav a {
+  padding: 10px 20px;
+  font-size: 2rem;
+  color: #e0ffff;
+  border-radius: 5px;
+  letter-spacing: 0.5px;
 }
-
-.a1:active {
-  background: red;
-  color: white;
+header nav a:hover,
+header nav a.active {
+  background: #00c2cb;
+  color: #42455a;
+  transition: 0.5s ease-out;
+  letter-spacing: 2px;
 }
 
 .section-1{
    background-color: wheat;
     padding-top:15vh;
-    height: 62vh;
+    height: 100vh;
     width: 100vw;
     
 }
@@ -86,7 +74,7 @@ a.a1:hover {
 }
 
 .section-2{
-    background-color:rgb(216, 216, 216);
+    background-color:rgb(94, 122, 247);
     height: 100vh;
     width: 100vw;
 
@@ -105,19 +93,26 @@ a.a1:hover {
 
 }
 .card-1 , .card-4{
-  background-color: rgb(68, 139, 139);
+  background-color: orange;
   color:black;
   width: 40vw;
   padding-left: 2vw;
   height: 25vh;
+  border: 0.3px solid black;
+  margin-left: 2vw;
+  box-shadow: 1px 1px 15px 0.3px rgb(75, 74, 74);
   
   
 }
 .card-2 , .card-3{
-  background-color:rgb(179, 208, 209);
+  background-color:rgba(49, 255, 128, 0.712);
   width: 40vw;
   padding-left: 2vw;
   height: 25vh;
+  border: 0.3px solid black;
+  margin-left: 2vw;
+  
+  box-shadow: 1px 1px 15px 0.3px rgb(53, 53, 53);
   
 }
 .card-1 , .card-3{
@@ -129,7 +124,7 @@ a.a1:hover {
 }
 .section-3{
   background-color:rgb(216, 216, 216);
-  height: 70vh;
+  height: 100vh;
     width: 100vw;
     
 
@@ -154,16 +149,23 @@ a.a1:hover {
   display: flex;
   flex-direction: column;
 }
-
-
+.div-8{
+  margin-left: 26vw;
+}
+.call,.num{
+  padding-right: 2.5vw;
+}
 .div-12,.div-8{
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50vw;
   text-align: center;
+  padding-top: 20vh;
 }
 .section-4{
   background-color: wheat;
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
   
 } 
@@ -227,6 +229,8 @@ h3{
 }
 .div-14:hover,.div-15:hover,.div-20:hover{
 box-shadow: 5px 5px 5px 5px rgb(179, 208, 209);
+transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
 }
 p{
   text-align: start;
@@ -237,3 +241,23 @@ h5{
   text-align: center;
   font-size: large;
 }
+.card-title{
+  padding-top:2vh;
+}
+.img-3:hover{
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 2s all ease;
+  padding-top: 10vh;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
