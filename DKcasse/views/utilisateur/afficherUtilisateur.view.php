@@ -16,6 +16,6 @@ ob_start();
 
 <?php
 $content = ob_get_clean();
-$titre = $utilisateur->getNomutilisateur() . " " . $utilisateur->getPrenomutilisateur();
+$Nomutilisateur = $utilisateur->getNomutilisateur();
 require "views/template.php";
 ?>

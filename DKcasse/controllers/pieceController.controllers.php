@@ -1,3 +1,4 @@
+
 <?php
 require_once "models/piece/piecemanager.php";
 
@@ -10,7 +11,7 @@ class PieceController{
     }
 
     public function afficherPieces(){
-        $piece = $this->PieceManager->getPieces();
+         $piece= $this->PieceManager->getPieces();
         require "views/piece/pieces.view.php";
     }
 

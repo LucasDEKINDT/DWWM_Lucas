@@ -13,7 +13,7 @@ endif;
 
 <table class="table text-center">
     <tr class="table-dark">
-        <th>Id utilisateur</th>
+        
         <th>Grade</th>
         <th>Nom utilisateur</th>
         <th>Prénom utilisateur</th>
@@ -22,18 +22,18 @@ endif;
         <th colspan="2">Actions</th>
     </tr>
     <?php 
-    for($i=0; $i < count($utilisateurs);$i++) : 
+    for($i=0; $i < count($utilisateur);$i++) : 
     ?>
     <tr>
-        <td class="align-middle"><a href="<?= URL ?>utilisateurs/l/<?= $utilisateurs[$i]->getIdutilisateur(); ?>"><?= $utilisateurs[$i]->getIdutilisateur(); ?></a></td>
-        <td class="align-middle"><?= $utilisateurs[$i]->getGrade() ? 'Oui' : 'Non'; ?></td>
-        <td class="align-middle"><a href="<?= URL ?>utilisateurs/l/<?= $utilisateurs[$i]->getIdutilisateur(); ?>"><?= $utilisateurs[$i]->getNomutilisateur(); ?></a></td>
-        <td class="align-middle"><?= $utilisateurs[$i]->getPrenomutilisateur(); ?></td>
-        <td class="align-middle"><?= $utilisateurs[$i]->getEmailutilisateur(); ?></td>
-        <td class="align-middle"><?= $utilisateurs[$i]->getMotdepasse(); ?></td>
-        <td class="align-middle"><a href="<?= URL ?>utilisateurs/m/<?= $utilisateurs[$i]->getIdutilisateur(); ?>" class="btn btn-warning">Modifier</a></td>
+        <td class="align-middle"><a href="<?= URL ?>utilisateurs/l/<?= $utilisateur[$i]->getIdutilisateur(); ?>"><?= $utilisateur[$i]->getIdutilisateur(); ?></a></td>
+        <td class="align-middle"><?= $utilisateur[$i]->getGrade(); ?></td>
+        <td class="align-middle"><a href="<?= URL ?>utilisateurs/l/<?= $utilisateur[$i]->getIdutilisateur(); ?>"><?= $utilisateur[$i]->getNomutilisateur(); ?></a></td>
+        <td class="align-middle"><?= $utilisateur[$i]->getPrenomutilisateur(); ?></td>
+        <td class="align-middle"><?= $utilisateur[$i]->getEmailutilisateur(); ?></td>
+        <td class="align-middle"><?= $utilisateur[$i]->getMotdepasse(); ?></td>
+        <td class="align-middle"><a href="<?= URL ?>utilisateurs/m/<?= $utilisateur[$i]->getIdutilisateur(); ?>" class="btn btn-warning">Modifier</a></td>
         <td class="align-middle">
-            <form method="POST" action="<?= URL ?>utilisateurs/s/<?= $utilisateurs[$i]->getIdutilisateur(); ?>" onSubmit="return confirm('Voulez-vous vraiment supprimer l\'utilisateur ?');">
+            <form method="POST" action="<?= URL ?>utilisateurs/s/<?= $utilisateur[$i]->getIdutilisateur(); ?>" onSubmit="return confirm('Voulez-vous vraiment supprimer l\'utilisateur ?');">
                 <button class="btn btn-danger" type="submit">Supprimer</button>
             </form>
         </td>

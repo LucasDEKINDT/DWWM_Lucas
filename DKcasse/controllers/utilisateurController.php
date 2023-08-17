@@ -6,7 +6,7 @@ class UtilisateurController{
 
     public function __construct(){
         $this->UtilisateurManager = new UtilisateurManager;
-        $this->UtilisateurManager->chargementUtilisateurs();
+        $this->UtilisateurManager->chargementUtilisateur();
     }
 
     public function afficherUtilisateurs(){
@@ -25,12 +25,12 @@ class UtilisateurController{
 
     public function ajoutUtilisateurValidation(){
         $this->UtilisateurManager->ajoutUtilisateurBd(
-            $_POST['Idutilisateur'],
+            $_POST['IdUtilisateur'],
             $_POST['Grade'],
-            $_POST['Nomutilisateur'],
-            $_POST['Prenomutilisateur'],
-            $_POST['Emailutilisateur'],
-            $_POST['Motdepasse']
+            $_POST['NomUtilisateur'],
+            $_POST['PrenomUtilisateur'],
+            $_POST['EmailUtilisateur'],
+            $_POST['MotDePasse']
         );
 
         $_SESSION['alert'] = [
@@ -47,7 +47,7 @@ class UtilisateurController{
             "type" => "success",
             "msg" => "Suppression Réalisée"
         ];
-        header('Location: ' . URL . "utilisateur");
+        header('Location: ' . URL . "utilisateurs");
     }
 
     public function modificationUtilisateur($Idutilisateur){
@@ -57,18 +57,18 @@ class UtilisateurController{
 
     public function modificationUtilisateurValidation(){
         $this->UtilisateurManager->modificationUtilisateurBD(
-            $_POST['Idutilisateur'],
+            $_POST['IdUtilisateur'],
             $_POST['Grade'],
-            $_POST['Nomutilisateur'],
-            $_POST['Prenomutilisateur'],
-            $_POST['Emailutilisateur'],
-            $_POST['Motdepasse']
+            $_POST['NomUtilisateur'],
+            $_POST['PrenomUtilisateur'],
+            $_POST['EmailUtilisateur'],
+            $_POST['MotDePasse']
         );
         $_SESSION['alert'] = [
             "type" => "success",
             "msg" => "Modification Réalisée"
         ];
 
-        header('Location: ' . URL . "utilisateur");
+        header('Location: ' . URL . "utilisateurs");
     }
 }

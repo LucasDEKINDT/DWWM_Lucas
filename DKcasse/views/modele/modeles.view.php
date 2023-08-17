@@ -14,8 +14,8 @@ endif;
 <table class="table text-center">
     <tr class="table-dark">
         
-        <th>Modele</th>
         <th>Annee</th>
+        <th>Modele</th>
         <th colspan="2">Actions</th>
     </tr>
     <?php 

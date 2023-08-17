@@ -11,7 +11,7 @@
 
 <?php
 // Assurez-vous que la variable $grade est définie
-$grade = isset($grade) ? $grade : 0;
+$Grade = isset($Grade) ? $Grade : 1;
 ?>
 
 <nav class="navbar navbar-expand-lg  navbar-dark">
@@ -29,7 +29,8 @@ $grade = isset($grade) ? $grade : 0;
                     <a class="nav-link" href="<?= URL ?>typepiece">Type Pieces</a>
                     <a class="nav-link" href="<?= URL ?>categorie">Categorie</a>
                     <a class="nav-link" href="<?= URL ?>marques">Marques</a>
-                    <a class="nav-link" href="<?= URL ?>utilisateur">utilisateur</a>
+                    <a class="nav-link" href="<?= URL ?>utilisateurs">utilisateur</a>
+                    
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Catégorie</a>
@@ -46,23 +47,7 @@ $grade = isset($grade) ? $grade : 0;
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon compte</a>
                     <div class="dropdown-menu">
-                        <?php
-                        if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true && $grade == 1) {
-                          // L'utilisateur est connecté en tant qu'administrateur, afficher l'onglet "Administration"
-                          echo '<a class="dropdown-item" href="administration.php">Administration</a>';
-                      }
-                        if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) {
-                            // L'utilisateur est connecté, afficher le lien de déconnexion
-                            echo '<a class="dropdown-item" href="profil.php">Mon Profil</a>';
-                            echo '<a class="dropdown-item" href="deconnexion.php">Déconnexion</a>';
-                        } else {
-                            // L'utilisateur n'est pas connecté, afficher le lien de connexion/inscription
-                            echo '<a class="dropdown-item" href="connexion.php">Connexion</a>';
-                            echo '<a class="dropdown-item" href="inscription.php">Inscription</a>';
-                        }
-
-                        
-                        ?>
+                       <a href="./views/connecter.php">connection</a>
                     </div>
                 </li>
             </ul>

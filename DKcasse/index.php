@@ -1,3 +1,4 @@
+<?php ob_start() ?>
 <?php
 
 
@@ -9,6 +10,7 @@ require_once "controllers/typepieceControllers.php";
 require_once "controllers/categorieController.php";
 require_once "controllers/marqueController.php";
 require_once "controllers/utilisateurController.php";
+require_once "./models/utilisateur/Utilisateur.php";
 $pieceController = new PieceController;
 $modeleController = new ModeleController;
 $typepieceController = new TypepieceController;
@@ -124,9 +126,9 @@ try{
                     throw new Exception("La page n'existe pas");
                 }
             break;
-            case "utilisateur" : 
+            case "utilisateurs" : 
                 if(empty($url[1])){
-                    $utilisateurController->afficherUtilisateur();
+                    $utilisateurController->afficherUtilisateurS();
                 } else if($url[1] === "l") {
                     $utilisateurController->afficherUtilisateur($url[2]);
                 } else if($url[1] === "a") {
@@ -134,7 +136,7 @@ try{
                 } else if($url[1] === "m") {
                     $utilisateurController->modificationUtilisateur($url[2]);
                 } else if($url[1] === "s") {
-                    $marqueController->suppressionUtilisateur($url[2]);
+                    $utilisateurController->suppressionUtilisateur($url[2]);
                 } else if($url[1] === "av") {
                     $utilisateurController->ajoutUtilisateurValidation();
                 } else if($url[1] === "mv") {

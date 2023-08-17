@@ -1,6 +1,6 @@
 <?php
 require_once "models/connexion.php";
-require_once "utilisateur.php";
+require_once "Utilisateur.php";
 
 class UtilisateurManager extends Model{
     private $utilisateurs; // tableau d'Utilisateur
@@ -13,14 +13,14 @@ class UtilisateurManager extends Model{
         return $this->utilisateurs;
     }
 
-    public function chargementUtilisateurs(){
+    public function chargementUtilisateur(){
         $req = $this->getBdd()->prepare("SELECT * FROM utilisateur");
         $req->execute();
         $mesUtilisateurs = $req->fetchAll(PDO::FETCH_ASSOC);
         $req->closeCursor();
 
         foreach($mesUtilisateurs as $utilisateur){
-            $u = new Utilisateur(
+            $l = new Utilisateur(
                 $utilisateur['IdUtilisateur'],
                 $utilisateur['Grade'],
                 $utilisateur['NomUtilisateur'],
@@ -28,7 +28,7 @@ class UtilisateurManager extends Model{
                 $utilisateur['EmailUtilisateur'],
                 $utilisateur['MotDePasse']
             );
-            $this->ajoutUtilisateur($u);
+            $this->ajoutUtilisateur($l);
         }
     }
 
@@ -43,15 +43,15 @@ class UtilisateurManager extends Model{
 
     public function ajoutUtilisateurBd($Idutilisateur, $Grade, $Nomutilisateur, $Prenomutilisateur, $Emailutilisateur, $Motdepasse){
         $req = "
-        INSERT INTO utilisateur (Idutilisateur, Grade, Nomutilisateur, Prenomutilisateur, Emailutilisateur, Motdepasse)
-        values (:Idutilisateur, :Grade, :Nomutilisateur, :Prenomutilisateur, :Emailutilisateur, :Motdepasse)";
+        INSERT INTO utilisateur (IdUtilisateur, Grade, NomUtilisateur, PrenomUtilisateur, EmailUtilisateur, MotDePasse)
+        values (:IdUtilisateur, :Grade, :NomUtilisateur, :PrenomUtilisateur, :EmailUtilisateur, :MotDePasse)";
         $stmt = $this->getBdd()->prepare($req);
-        $stmt->bindValue(":Idutilisateur", $Idutilisateur, PDO::PARAM_INT);
+        $stmt->bindValue(":IdUtilisateur", $Idutilisateur, PDO::PARAM_INT);
         $stmt->bindValue(":Grade", $Grade, PDO::PARAM_BOOL);
-        $stmt->bindValue(":Nomutilisateur", $Nomutilisateur, PDO::PARAM_STR);
-        $stmt->bindValue(":Prenomutilisateur", $Prenomutilisateur, PDO::PARAM_STR);
-        $stmt->bindValue(":Emailutilisateur", $Emailutilisateur, PDO::PARAM_STR);
-        $stmt->bindValue(":Motdepasse", $Motdepasse, PDO::PARAM_STR);
+        $stmt->bindValue(":NomUtilisateur", $Nomutilisateur, PDO::PARAM_STR);
+        $stmt->bindValue(":PrenomUtilisateur", $Prenomutilisateur, PDO::PARAM_STR);
+        $stmt->bindValue(":EmailUtilisateur", $Emailutilisateur, PDO::PARAM_STR);
+        $stmt->bindValue(":MotDePasse", $Motdepasse, PDO::PARAM_STR);
         $resultat = $stmt->execute();
         $stmt->closeCursor();
 
@@ -63,10 +63,10 @@ class UtilisateurManager extends Model{
 
     public function suppressionUtilisateurBD($Idutilisateur){
         $req = "
-        DELETE FROM utilisateur WHERE Idutilisateur = :Idutilisateur
+        DELETE FROM utilisateur WHERE IdUtilisateur = :IdUtilisateur
         ";
         $stmt = $this->getBdd()->prepare($req);
-        $stmt->bindValue(":Idutilisateur", $Idutilisateur, PDO::PARAM_INT);
+        $stmt->bindValue(":IdUtilisateur", $Idutilisateur, PDO::PARAM_INT);
         $resultat = $stmt->execute();
         $stmt->closeCursor();
         if($resultat > 0){
@@ -77,16 +77,16 @@ class UtilisateurManager extends Model{
 
     public function modificationUtilisateurBD($Idutilisateur, $Grade, $Nomutilisateur, $Prenomutilisateur, $Emailutilisateur, $Motdepasse){
         $req = "
-        UPDATE utilisateurs
-        SET Grade = :Grade, Nomutilisateur = :Nomutilisateur, Prenomutilisateur = :Prenomutilisateur, Emailutilisateur = :Emailutilisateur, Motdepasse = :Motdepasse
-        WHERE Idutilisateur = :Idutilisateur";
+        UPDATE utilisateur
+        SET Grade = :Grade, NomUtilisateur = :NomUtilisateur, PrenomUtilisateur = :PrenomUtilisateur, EmailUtilisateur = :EmailUtilisateur, MotDePasse = :MotDePasse
+        WHERE IdUtilisateur = :IdUtilisateur";
         $stmt = $this->getBdd()->prepare($req);
-        $stmt->bindValue(":Idutilisateur", $Idutilisateur, PDO::PARAM_INT);
+        $stmt->bindValue(":IdUtilisateur", $Idutilisateur, PDO::PARAM_INT);
         $stmt->bindValue(":Grade", $Grade, PDO::PARAM_BOOL);
-        $stmt->bindValue(":Nomutilisateur", $Nomutilisateur, PDO::PARAM_STR);
-        $stmt->bindValue(":Prenomutilisateur", $Prenomutilisateur, PDO::PARAM_STR);
-        $stmt->bindValue(":Emailutilisateur", $Emailutilisateur, PDO::PARAM_STR);
-        $stmt->bindValue(":Motdepasse", $Motdepasse, PDO::PARAM_STR);
+        $stmt->bindValue(":NomUtilisateur", $Nomutilisateur, PDO::PARAM_STR);
+        $stmt->bindValue(":PrenomUtilisateur", $Prenomutilisateur, PDO::PARAM_STR);
+        $stmt->bindValue(":EmailUtilisateur", $Emailutilisateur, PDO::PARAM_STR);
+        $stmt->bindValue(":MotDePasse", $Motdepasse, PDO::PARAM_STR);
         $resultat = $stmt->execute();
         $stmt->closeCursor();
 

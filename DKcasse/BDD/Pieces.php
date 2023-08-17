@@ -1,7 +1,7 @@
 <?php
 
-class Pieces{
-    private $idpieces;
+class Piece{
+    private $idpiece;
 
     private $nompiece;
 
@@ -11,25 +11,15 @@ class Pieces{
 
 	private $idTypePiece;
 
-public function __construct($idpieces,$nompiece,$prix,$stock,$idTypePiece){
-    $this->idpieces = $idpieces;
-    $this->nompiece = $nompiece;
-    $this->prix = $prix;
-    $this->stock = $stock;
-	$this->idTypePiece = $idTypePiece;
-}
-
-
+	
 
 	
-	public function getIdpieces() {
-		return $this->idpieces;
+	public function getIdpiece() {
+		return $this->idpiece;
 	}
 	
-	
-	public function setIdpieces($idpieces){
-		$this->idpieces = $idpieces;
-		
+	public function setIdpiece($idpiece){
+		$this->idpiece = $idpiece;
 	}
 
 	
@@ -76,8 +66,27 @@ public function __construct($idpieces,$nompiece,$prix,$stock,$idTypePiece){
 		$this->idTypePiece = $idTypePiece;
 		
 	}
+	public function __construct(array $options = [])
+    {
+        if (!empty($options)) // empty : renvoi vrai si le tableau est vide
+        {
+            $this->hydrate($options);
+        }
+    }
+
+	public function hydrate($data)
+    {
+        foreach ($data as $key => $value)
+        {
+            $methode = "set" . ucfirst($key); //ucfirst met la 1ere lettre en majuscule
+            if (is_callable(([$this, $methode]))) // is_callable verifie que la methode existe
+            {
+                $this->$methode($value);
+            }
+        }
+    }
+	public function affichagepiece(){
+		
+		 echo "l'id de la piece est : ".$this->idpiece." son nom est : ".$this->nompiece." son prix est de : ".$this->prix." son stock est de : ".$this->stock."  son id type piece est : ".$this->idTypePiece;
+	}
 }
-
-
-
-
