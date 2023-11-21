@@ -1,7 +1,0 @@
-create databse (
-idPiece int AUTO_increment NOT NULL,
-nom Varchar (50) NOT NULL ,
-prix INT (11) ,
-stock INT (100),
-idTypePiece INT NOT NULL,
-PRIMARY KEY (idPiece) ) ENGINE=InnoDB;
