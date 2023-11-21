@@ -1,0 +1,66 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #dadada;
+}
+
+.navbar{
+    background-color: #5E70CC;
+}
+
+.titre{
+    color: #5E70CC;
+}
+
+.bienvenue{
+    text-shadow: -1px 0 black, 0 1px black,
+        1px 0 black, 0 -1px black
+}
+
+.descbienvenue{
+    text-shadow: -1px 0 black, 0 1px black,
+        1px 0 black, 0 -1px black
+}
+
+.footer{
+    background-color: #5E70CC;
+    height: 80px;
+}
+
+.nous_contacter{
+    border: #5E70CC 1px solid;
+}
+
+#cookie-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+#cookie-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 9999;
+}
+
+#accept-cookies {
+    background-color: #5E70CC;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
